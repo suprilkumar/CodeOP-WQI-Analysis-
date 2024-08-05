@@ -1,0 +1,3210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>report page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="IMGS/codeoptabicon.png">
+    <style>
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        main {
+            margin-left: 16rem;
+            /* Width of the sidebar */
+        }
+    </style>
+</head>
+
+<body class="flex flex-col h-screen overflow-hidden bg-gradient-to-r from-leftpowerbi via-midpowerbi to-rightpowerbi">
+
+    <!-- Top Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full p-1 bg-black">
+        <div class="container mx-auto flex justify-between items-center">
+
+            <a href="./index.html" class=" ">
+                <div class="text-white font-black text-2xl flex flex-row items-center">
+                    <img src="IMGS/codeoplogo.png" class="w-42 h-16 mr-4 rounded-lg" alt="CodeOP Logo">
+                </div>
+            </a>
+
+            <div class="space-x-8 hidden md:flex">
+                <a href="./index.html"
+                    class="text-white font-bold text-xl border border-white rounded-full py-1 px-3 hover:text-cyan-500 hover:border-cyan-500">Home</a>
+                <a href="./report.html"
+                    class="text-white font-bold text-xl border border-white rounded-full py-1 px-3 hover:text-cyan-500 hover:border-cyan-500">Analysis
+                    Report</a>
+                <a href="#"
+                    class="text-white font-bold text-xl border border-white rounded-full py-1 px-3 hover:text-cyan-500 hover:border-cyan-500">About
+                    Us</a>
+            </div>
+            <div class="md:hidden text-white">
+                <!-- Hamburger menu icon -->
+                <button id="menu-toggle" class="focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex flex-1 overflow-hidden mt-16 pt-2">
+        <!-- Left Navigation -->
+        <aside id="side-nav" class="bg-slate-950 text-cyan-300 w-64 px-8 pb-24 fixed h-full overflow-y-auto">
+            <div class="w-full h-0.5 bg-white"></div>
+            <div>
+                <h1 class="text-amber-500 text-xl font-bold text-center pt-3">Select State</h1>
+            </div>
+            <ul>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 mt-3 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data1">Delhi</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data2">Andhra Pradesh</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data3">Assam</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data4">Bihar</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data5">Chhattisgarh</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data6">Goa</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data7">Gujarat</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data8">Haryana</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data9">Himachal Pradesh</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data10">Karnataka</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data11">Kerala</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data12">Madhya Pradesh</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data13">Maharashtra</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data14">Meghalaya</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data15">Orissa</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data16">Punjab</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data17">Rajasthan</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data18">Tamil Nadu</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data19">Telangana</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data20">Tripura</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data21">Uttarakhand</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data22">Uttar Pradesh</button></li>
+                <li><button
+                        class="data-btn w-48 text-left px-4 py-1 bg-gradient-to-b from-indigo-900 to-sky-700 rounded-lg my-2 hover:border hover:border-cyan-300 font-semibold text-md"
+                        data-target="data23">West Bengal</button></li>
+
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-5 overflow-y-auto font-custom">
+
+            <!-- DELHI -->
+            <div id="data1" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 bg-bgpowerbi m-1 py-6">
+                                <h1 class="text-7xl font-black text-center font-custom text-amber-400">Delhi</h1>
+                            </div>
+                            <div class=""><img src="data/delhi /eutdl.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">3</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">23.80</h1>
+                            </div>
+                            <div class=""><img src="data/delhi /ph_dl.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/delhi /wqi_dl.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/delhi /fec_dl.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-row justify-evenly gap-8">
+                    <!-- POLLUTION SOURCES -->
+                    <div>
+                        <h1 class="text-cyan-500 font-bold  text-2xl pb-2 text-center">Detected sources of Pollution
+                        </h1>
+                        <div class="flex flex-row justify-evenly text-sm text-white">
+                            <div class="mx-3">
+                                <li>Sewage and wastewater</li>
+                                <li>Industrial effluents</li>
+                            </div>
+                            <div>
+                                <li>Agricultural runoff</li>
+                                <li>Construction activities</li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-white text-md ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2">Safe water bodies</h1>
+                        <li>Yamuna at Wazirabad</li>
+                    </div>
+                    <div class="text-white text-sm ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2">Polluted water bodies</h1>
+                        <li>Yamuna at Nizamuddin</li>
+                        <li>Yamuna at Okhla bridge (Inlet of Agra Canal)</li>
+                    </div>
+
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+            <!-- ANDHRA PRADESH -->
+            <div id="data2" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 bg-bgpowerbi m-1 py-9">
+                                <h1 class="text-5xl font-black text-center font-custom text-amber-400">Andhra Pradesh
+                                </h1>
+                            </div>
+                            <div class=""><img src="data/andhrapradesh/eut_ap.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">91</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">25.75</h1>
+                            </div>
+                            <div class=""><img src="data/andhrapradesh/ph_ap.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/andhrapradesh/wqi_ap.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/andhrapradesh/fec_ap.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+                    <!-- POLLUTION SOURCES -->
+                    <div>
+                        <h1 class="text-cyan-500 font-bold  text-2xl pb-2 text-center">Detected sources of Pollution
+                        </h1>
+                        <div class="flex flex-row justify-evenly text-sm text-white">
+                            <div>
+                                <li>Agricultural runoff</li>
+                            </div>
+                            <div>
+                                <li>Sewage and wastewater</li>
+                            </div>
+                            <div>
+                                <li>Industrial effluents</li>
+                            </div>
+                            <div>
+                                <li>Mining activities</li>
+                            </div>
+                            <div>
+                                <li>Pharmaceutical waste</li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LOCATION LIST -->
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Uppalapadu Tank, Uppalapadu (V), Pedakakani (M)</li>
+                                <li>Krishna At Thangadi, Mahaboobnagar Dist.</li>
+                                <li>Pathakotha Cheruvu, Pathakotha (V), Guntakal (M)</li>
+                                <li>Tunghabhadra At Kurnool U/S, Bavapuram</li>
+                                <li>Tunghabhadra At Manthralayam, Kurnool Dist.</li>
+                                <li>River Hundri, Joharpur (V), Near Temple, Kurnool</li>
+                                <li>Gargeyapuram Lake, Gargeyapuram (V), Kurnool (M)</li>
+                            </div>
+                            <div>
+                                <li>Sangameswara Back Waters, Lift Irrigation Scheme, Muchumarri (V), Pagidyala</li>
+                                <li>Palasamudram Lake, Palasamudram (V), Penukonda (M)</li>
+                                <li>Somasila Back Water, Old Ramapuram (V), Vontimitta (M)</li>
+                                <li>Dali Tank, Vemulada (V), Tekkali (M)</li>
+                                <li>Kondakarla-Aava Lake, Kondakarla, Vishakhapatnam</li>
+                                <li>Manjeera At Gowdicharla A/C With Nakkavagu</li>
+                                <li>B/W - Near Ckm College, Enumamula (V), Warangal Dist.</li>
+
+                            </div>
+                            <div>
+                                <li>Musi D/S At Hyderabad</li>
+                                <li>Pedda Cheruvu, Vizianagara Town</li>
+                                <li>Kattamanchi Cheruvu, Chittoor Town</li>
+                                <li>Maner At Warangal U/S</li>
+                                <li>River Kundu, Nandyal, Kurnool</li>
+                                <li>Gangineni Cheruvu, Chittoor Town</li>
+                                <li>River Nakkavagu, Bachugudem, Medak</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Krishna At Wadapally After Confl. With R. Musi, A.P. (Shifted From 1220)</li>
+                                <li>Anumula Pally Cheruvu, Anumula Pally (V), Racherla (M) Pally (V)</li>
+                                <li>Krishna Mangroves, Kara Agraharm (V), Machilipatnam (M)</li>
+                                <li>Lagoon, Near Uppalanka Mudflats, Mahalakshmi Nagar, Kakinada</li>
+                                <li>Manjeera At Gowdicharla B/C With Nakkavagu</li>
+                                <li>B W. - Krishna Murthy, D.No. 48-16-43 Autonagar Vijjayawada, Krishna Dist.</li>
+                                <li>Godavari At Godavarikhani, Near Bathing Ghat, Karimnagar</li>
+                                <li>Godavari At Kamalpur D/S At M/S. Ap Rayons Ltd. Discharge Point, Warangal</li>
+                                <li>Godavari At Kamalpur U/S M/S Ap Rayons Ltd. Intake Well, Warangal</li>
+                                <li>Mid Pennar Reservoir, Penakacherla (V), Garladinne (M)</li>
+                                <li>Muneru Before Confl. With Krishna, Nandigama, A.P.</li>
+                                <li>Naupada Swamps, Meghavaram (V), Santhabommali (M)</li>
+                                <li>Nellore Swarnala Cheruvu (Nellore Tank), Nellore Town</li>
+                                <li>O/W. - Near Rama Temple, Ward No.2, Mindi, Visakhapatnam</li>
+                                <li>O/W. - Near Partap Nagar Bridge - Kakinada, E.G. Dist.</li>
+                                <li>P.E Chinnayapalem Cheruvu, P.E Chinnayapalem (V), Tondangi (M)</li>
+                                <li>Palleru Before Confl. With Krishna, Jaggaayyapet</li>
+                                <li>Pathatekkali Cheruvu (Pedda Cheruvu), Pathatekkali (V), Vajrapukotturu (M)</li>
+                                <li>Pennar Before Confl. With Chitravathi, Tadpatri, Unganoor</li>
+                                <li>Pulicate Lake, Srihari Kota, Sullurupeta (M)</li>
+                                <li>Tatipudi Reservoir, Tatipudi (V), Gantyada (M)</li>
+                                <li>Gachakayala Pora (Lake), Gachakayala Pora (V), Katrenikona (M)</li>
+                                <li>Brahmaiahlingam Cheruvu At Narasingapalem (V), Agiripalli?(M)</li>
+                            </div>
+                            <div>
+                                <li>B W Of Navlok Gardens Nellore</li>
+                                <li>Kinnerasani A/C Of Ktps Ash Pond Effluents, Khammam</li>
+                                <li>Kolleru Lake, Kokkirayalanka (V), Kailalur (M)</li>
+                                <li>Krishna A/C With Tungabhadra, Sangameshwaram</li>
+                                <li>B/W - Manakondur (V), Karimnagar Dist., A.P</li>
+                                <li>B/W. - Nagaram(V), Palvoncha, Khammam Dist., A.P.</li>
+                                <li>B/W. - Nagiri, Chittoor Dist., A.P</li>
+                                <li>B/W. - Nandyal, Kurnool Dist., A.P.</li>
+                                <li>B/W. - Swarnamukhi River, Srikalahasti, Chittoor Dist.</li>
+                                <li>B/W. - Tungbhadra River Near Kurnool, A.P.</li>
+                                <li>B/W. - Vijay Kumar Autonagar Vijayawada, Krishna Dist.</li>
+                                <li>Brahmamsagar, Kandimallayapalli (V)</li>
+                                <li>Chengambakam Tank In Sri City Sez, Irugulam (V)</li>
+                                <li>Pennar After Conf. With Cheyyuru, Somasile</li>
+                                <li>Pennar After Conf. With Papagni, Puspagini</li>
+                                <li>Godavari At Mancherial, Near Rly Bdg B/C Of Rallavagu</li>
+                                <li>Godavari At Bhadrachalam D/S Bathing Ghat, Khammam</li>
+                                <li>Godavari At Bhadrachalam U/S Bathing Ghat, Khammam</li>
+                                <li>Godavari At Rajamundry D/S Of Nalla Channel</li>
+                                <li>Godavari At Rajamundry U/S Of Nalla Channel</li>
+                                <li>Godavari At Ramagundam D/S Karimnagar</li>
+                                <li>Godavari At Ramagundam U/S, Karimnagar</li>
+                                <li>Interu Swamps, Interu (V), Bantumilli (M)</li>
+                            </div>
+                            <div>
+                                <li>Godavari At Mancherial</li>
+                                <li>Godavari At Polavaram</li>
+                                <li>Godavari At Rajahmundry D/S</li>
+                                <li>Godavari, D/S Of Ramanugundam</li>
+                                <li>Godavari At Rajahmundry U/S</li>
+                                <li>Manjeera Nr Ganapathi Sugars</li>
+                                <li>O/W. Peddanuyyi - Vizianagaram</li>
+                                <li>Manjera At Raipallu</li>
+                                <li>Musi U/S At Hyderabad, A.P.</li>
+                                <li>Maner At Somnapalli</li>
+                                <li>Godavari At Basara, Adilabad</li>
+                                <li>Annamayya Project On Cheyyeru</li>
+                                <li>Reservoir, Rajampet</li>
+                                <li>Sabari At Kunavaram, Khammam</li>
+                                <li>Well At Kuyyura, A.P.</li>
+                                <li>Pennar At Siddvata, Nellore</li>
+                                <li>Krishna At Amaravati, Guntur</li>
+                                <li>Krishna At Gadwal Bridge, A.P.</li>
+                                <li>Krishna At Hamsala Deevi, Guntur Dist</li>
+                                <li>Krishna At Vedadri, Guntur</li>
+                                <li>Krishna At Vijaywada</li>
+                                <li>Godavari At Burgampahad, Khammam</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+            <!-- ASSAM -->
+            <div id="data3" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 bg-bgpowerbi m-1 py-6">
+                                <h1 class="text-7xl font-black text-center font-custom text-amber-400">Assam</h1>
+                            </div>
+                            <div class=""><img src="data/assam/eut_asm.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">83</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">24.83</h1>
+                            </div>
+                            <div class=""><img src="data/assam/ph_asm.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/assam/wqi_asm.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/assam/fec_asm.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+
+                    <!-- POLLUTION SOURCES -->
+                    <div>
+                        <h1 class="text-cyan-500 font-bold  text-2xl pb-2 text-center">Detected sources of Pollution
+                        </h1>
+                        <div class="flex flex-row justify-evenly text-sm text-white">
+                            <div>
+                                <li>Agricultural runoff</li>
+                            </div>
+                            <div>
+                                <li>Sewage and wastewater</li>
+                            </div>
+                            <div>
+                                <li>Industrial effluents</li>
+                            </div>
+                            <div>
+                                <li>Oil refineries</li>
+                            </div>
+                            <div>
+                                <li>Tea processing industries</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Bharalu At Guwahati</li>
+                                <li>Deepar Bill</li>
+                                <li>Silsako Beel, Chachal, Guwahati</li>
+                                <li>Kamalpur Beel, Kamalpur</li>
+                            </div>
+                            <div>
+                                <li>Deepor Beel Near Dharapur Chariali, Guwahati, Assam</li>
+                                <li>Elangabeel System (Connected To R. Kolong), Assam</li>
+                                <li>Deepor Beel At Boragaon Near IASST, Guwahati, Assam</li>
+                                <li>Burhidihing At Duliajan (Intake Point Of Oil India Ltd.)</li>
+                            </div>
+                            <div>
+                                <li>Borsola Beel, Sarabbhatti, Guwahati</li>
+                                <li>Soru Sola Beel, Paltan Bazar, Guwahati</li>
+                                <li>Netai Pukhuri At Netai Pukhuri</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Rajadinia Pukhuri At Abhayapuri, Assam</li>
+                                <li>Panchnai At Nh-52 Crossing, Orang</li>
+                                <li>Kalong At U/S Of Anandaram Dekial Phukan Bridge, Nagaon</li>
+                                <li>Dighali Pukhuri, Guwahati, Assam</li>
+                                <li>Jorpukhuri At Uzanbazar (Ugratala Temple)</li>
+                                <li>Kohora At N.H. Crossing, Kohora</li>
+                                <li>Bishnu Puskar Pukhuri Of Hayagrib Madhab Temple, Hajo, Assam</li>
+                                <li>Son Beel Water At Karimganj</li>
+                                <li>Chand Dubi Beel, Chand Dubi, Assam</li>
+                                <li>Barak At D/S Of Silchar</li>
+                                <li>Rajmaw Pukhuri, Jorhat, Assam</li>
+                                <li>Baskandi Pond Inside The Baskandi Madrasa, Baskandi, Assam</li>
+                                <li>Subhagya Kunda Pond Kamakhya Temple, Guwahati, Assam</li>
+                                <li>Batodrawa Satra Pond, Nagaon, Assam</li>
+                                <li>Thowradole Pukhuri, Thowradole G.P. Demow Block</li>
+                                <li>Bor Beel At Jakai, Assam</li>
+                                <li>Samaguri Beel In Nagaon District</li>
+                                <li>Ganga Pukhuri, Nalbari (Gordon School), Assam</li>
+                                <li>Holudunga Beel Near Gai Nadi/ River At Somarajan, Dhema Ji</li>
+                                <li>Daloni Beel Near Jogighopa, Assam</li>
+                                <li>Brahmaputra At Kherghat (A/ C Dibang & Dihang)</li>
+                                <li>Tamranga Beel, Ghilaguri Near Ikrabari, Dist. Bongaigaon</li>
+                                <li>Gaurisagar Tank, Gaurisagar, Assam</li>
+                                <li>Pond Water From Ramkrishna Mission At Hailakandi</li>
+                            </div>
+                            <div>
+                                <li>Rajapukhuri At Gauripur, Assam</li>
+                                <li>Sivasagar Tank (Borpukhuri) Near Sivadol, Assam</li>
+                                <li>Borpukhuri, Nazira, Assam</li>
+                                <li>Mer Beel At Madhabpur, Assam</li>
+                                <li>Padumpukhuri, Tezpur, Assam</li>
+                                <li>Parashali Beel At Demoria</li>
+                                <li>Maguri Beel, Guijan, Tinsukia</li>
+                                <li>Diplai Beel At Silgara, Kokrajhar</li>
+                                <li>Kharsang B/C Buridihing Near Kharsang</li>
+                                <li>Jaipal Pukhuri, Sipajhar, Assam</li>
+                                <li>Mahamaya Mandir Pukhuri, Assam</li>
+                                <li>Dikhow At Dikhow Bdg Sivasagar</li>
+                                <li>Kapili At Dharmtul Bridge, Nh-31, Nagaon</li>
+                                <li>Kamalabari Lake Inside Kamalabari Children’s Park, Geleky</li>
+                                <li>Hasila Beel, Goalpara (Hasila Beel), Dist. Gopalpara, Assam</li>
+                                <li>Beki At Nh-37 Crossing At Barpeta Road</li>
+                                <li>Jai Bharali Near Biswanath Charali, Sonitpur</li>
+                                <li>Buridihing Nr Duliajan At D/S</li>
+                                <li>Brahmputra Near Water Intake Pt At Kacharighat, Panbazar</li>
+                                <li>Jaysagar Tank, Sivasagar, Assam</li>
+                                <li>Malini Beel Near Industrial Area At Ramnagar</li>
+                                <li>Bordoibam Beelmukh Bird Sanctuary, Dhemaji</li>
+                                <li>Hardoi Pukhuri, Charaidew, Assam</li>
+                                <li>Manas At Nh-31 Crossing, Barpeta, District</li>
+                            </div>
+                            <div>
+                                <li>Bhogdoi At Jorhat</li>
+                                <li>Brahmaputra At Jogijhoga</li>
+                                <li>Brahmputra At Sualkuchi</li>
+                                <li>Brahmaputra At Dibrugarh</li>
+                                <li>Tenga Pukhuri At Tengapukhuri</li>
+                                <li>Gophur Tank, Gophur, Assam</li>
+                                <li>Kushiara At Karimganj</li>
+                                <li>Sonai At Sonai</li>
+                                <li>Brahmaputra At Nimatighat</li>
+                                <li>Kolong At Marigaon</li>
+                                <li>Brahmaputra At Pandu</li>
+                                <li>Brahmaputra At Dhubri</li>
+                                <li>Borak At Panchagram</li>
+                                <li>Brahmaputra At Chandrapur</li>
+                                <li>Ranga Nadi D/S Of Hydel Project</li>
+                                <li>Boginadi Nr Bdg Nh-52, Lakhimpur</li>
+                                <li>Pagldia Nalbari Town, Nalbari</li>
+                                <li>Sankosh, Dhubri</li>
+                                <li>Saran Beel, Assam</li>
+                                <li>U/S Of Kathakal, Matijuri</li>
+                                <li>Brahmputra At Dhenukhapahar</li>
+                                <li>Mora Bharali At Tezpur</li>
+                                <li>Borpukhuri At Sonari</li>
+                                <li>Disang At Dillighat, Dibrugarh</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+            <!-- BIHAR -->
+            <div id="data4" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 bg-bgpowerbi m-1 py-6">
+                                <h1 class="text-7xl font-black text-center font-custom text-amber-400">Bihar</h1>
+                            </div>
+                            <div class=""><img src="data/bihar/eut_br.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">40</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">24.21</h1>
+                            </div>
+                            <div class=""><img src="data/bihar/ph_br.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/bihar/wqi_br.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/bihar/fec_br.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+                    <!-- POLLUTION SOURCES -->
+                    <div>
+                        <h1 class="text-cyan-500 font-bold  text-2xl pb-2 text-center">Detected sources of Pollution
+                        </h1>
+                        <div class="flex flex-row justify-evenly text-sm text-white">
+                            <div>
+                                <li>Agricultural runoff</li>
+                            </div>
+                            <div>
+                                <li>Industrial effluents</li>
+                            </div>
+                            <div>
+                                <li>Textile mills</li>
+                            </div>
+                            <div>
+                                <li>Leather tanneries</li>
+                            </div>
+                            <div>
+                                <li>Sewage and wastewater</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Moti Jheel At Motiharii Near Gayatri Mandir, Motihari, East Champaran</li>
+                                <li>Dighi Talab Near Kachhari Road, Gaya</li>
+                                <li>Sirsa At Ruxol</li>
+                            </div>
+                            <div>
+                                <li>Ram Rekha River At Harinagar</li>
+                                <li>Harbora River At Narkatiaganj</li>
+                            </div>
+                            <div>
+                                <li>Sikandrapur Lake At Sikandarpur, Muzaffarpur</li>
+                                <li>Manusmar River At Riga, Sitamarhi</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Kawar Lake Near Jaymangla Garh Temple At Begusarai</li>
+                                <li>Burhi Gandak At Akharaghat, Muzaffarpur</li>
+                                <li>Koshi River At Kurshela At Katihar</li>
+                                <li>Ganga At Buxar, Ramrekhaghat</li>
+                                <li>At Patna D/S (Ganga Bridge)</li>
+                                <li>At Confl. Sone Doriganj, Chapra</li>
+                                <li>Gandak At Sonepur, Patna (Before Confl.)</li>
+                                <li>Kamala River At Benipatti (Madhubani)</li>
+                            </div>
+                            <div>
+                                <li>Ganga At Sultanganj, Bhagalpur</li>
+                                <li>Koshi River At Madhepura</li>
+                                <li>Daha River At Itwa Bridge, Siwan</li>
+                                <li>Sikrahna River At Lal Parse, Bittiah</li>
+                                <li>Sikrana At Chanpatiya</li>
+                                <li>At Indrapuri, Dehri On Sone</li>
+                                <li>Gandak At Samastipur Road Bridge</li>
+                                <li>Gandak At Rewaghat, Muzaffarpur</li>
+                            </div>
+                            <div>
+                                <li>Ganga At Buxar, Bihar</li>
+                                <li>Ganga At Mokama (U/S)</li>
+                                <li>Ganga At Mokama (D/S)</li>
+                                <li>Kamala River At Darbhanga</li>
+                                <li>Farmar At Jogbani</li>
+                                <li>Darbhanga Ghat At Patna</li>
+                                <li>D/S Daha River At Sasamusa</li>
+                                <li>Ganga At Khurji, Patna U/S</li>
+                            </div>
+                            <div>
+                                <li>Ganga At Fatuha</li>
+                                <li>Dhous At Madhubani</li>
+                                <li>Ganga At Munger</li>
+                                <li>Daha At Siwam</li>
+                                <li>Sone At Koelwar</li>
+                                <li>Ganga At Bhagalpur</li>
+                                <li>Ganga At Kahalgaon</li>
+                                <li>Ganga At Punpun, Patna</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+
+            <!-- CHHATTISGARH -->
+            <div id="data5" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 bg-bgpowerbi m-1 py-8">
+                                <h1 class="text-6xl font-black text-center font-custom text-amber-400">Chhattisgarh
+                                </h1>
+                            </div>
+                            <div class=""><img src="data/chhattisgarh/eut_cg.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">2</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">25.17</h1>
+                            </div>
+                            <div class=""><img src="data/chhattisgarh/ph_cg.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/chhattisgarh/wqi_cg.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/chhattisgarh/fec_cg.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-row justify-evenly gap-8">
+
+                    <!-- POLLUTION SOURCES -->
+                    <div>
+                        <h1 class="text-cyan-500 font-bold  text-2xl pb-2 text-center">Detected sources of Pollution
+                        </h1>
+                        <div class="flex flex-row justify-evenly text-sm text-white">
+                            <div class="mx-3">
+                                <li>Industrial effluents</li>
+                                <li>Mining activities</li>
+                                <li>Thermal power plants</li>
+                            </div>
+                            <div>
+                                <li>Agricultural runoff</li>
+                                <li>Sewage and wastewater</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Nehru Nagar Talab Bhilai, Chattisgarh</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Seonath at U/S Rajnandgaon</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+
+
+
+            <!-- GOA -->
+            <div id="data6" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 bg-bgpowerbi m-1 py-6">
+                                <h1 class="text-7xl font-black text-center font-custom text-amber-400">Goa</h1>
+                            </div>
+                            <div class=""><img src="data/goa/eut_goa.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">27</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">28.07</h1>
+                            </div>
+                            <div class=""><img src="data/goa/ph_goa.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/goa/wqi_goa.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/goa/fec_goa.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+
+                    <!-- POLLUTION SOURCES -->
+                    <div>
+                        <h1 class="text-cyan-500 font-bold  text-2xl pb-2 text-center">Detected sources of Pollution
+                        </h1>
+                        <div class="flex flex-row justify-evenly text-sm text-white">
+                            <div class="mx-3">
+                                <li>Tourism-related pollution</li>
+                            </div>
+                            <div>
+                                <li>Sewage and wastewater</li>
+                            </div>
+                            <div>
+                                <li>Agricultural runoff</li>
+                            </div>
+                            <div>
+                                <li>Mining activities</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Saipem Lake</li>
+                            </div>
+                            <div>
+                                <li>Raitollem Lake</li>
+                            </div>
+                            <div>
+                                <li>Curtorim Lake</li>
+                            </div>
+                            <div>
+                                <li>Batim Lake, Goa Velha, Tiswadi - Goa</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Ambulor Lake, Verna, Salcete - Goa</li>
+                                <li>Sarzora Lake, Chinchinm, Salcete - Goa</li>
+                                <li>Valvant At Sankli - Bicholim, Goa</li>
+                                <li>Zuari At D/S Of Pt. Where Kumbarjria Canal Joins, Goa</li>
+                                <li>River Mapusa On Culvert On Highway Mapusa-Panaji</li>
+                                <li>River Sal Near Hotel Leela Mobor, Cavelossim</li>
+                                <li>River Khandepar At Codli Near Bridge, U/S Opa Waterworks, Sanguem</li>
+                                <li>Mandovi At Tonca, Marcela, Goa</li>
+
+                            </div>
+                            <div>
+                                <li>River Kalna At Chandel - Pernem</li>
+                                <li>Mandovi At Neighbourhood Of Panaji, Goa</li>
+                                <li>River Assonora At Assonora</li>
+                                <li>River Chapora Near Alorna Fort, Pernem</li>
+                                <li>River Bicholim Varazan Nagar</li>
+                                <li>River Kushawati Near Bund At Kevona, Rivon, Sanguem</li>
+                                <li>River Khandepar At Opa - Ponda</li>
+                            </div>
+                            <div>
+                                <li>Harwale Water Fall</li>
+                                <li>Carambolim Lake</li>
+                                <li>Mayem Lake, Bicholim</li>
+                                <li>Anjunem Lake</li>
+                                <li>Zuari At Panchawadi</li>
+                                <li>River Talpona At Canacona</li>
+                                <li>River Madai At Dabos - Valpoi</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+
+
+
+            <!-- GUJARAT -->
+            <div id="data7" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 bg-bgpowerbi m-1 py-6">
+                                <h1 class="text-7xl font-black text-center font-custom text-amber-400">Gujarat</h1>
+                            </div>
+                            <div class=""><img src="data/gujarat/eut_gj.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">63</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">27.60</h1>
+                            </div>
+                            <div class=""><img src="data/gujarat/ph_gj.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/gujarat/wqi_gj.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/gujarat/fec_gj.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+
+                    <!-- POLLUTION SOURCES -->
+                    <div>
+                        <h1 class="text-cyan-500 font-bold  text-2xl pb-2 text-center">Detected sources of Pollution
+                        </h1>
+                        <div class="flex flex-row justify-evenly text-sm text-white">
+                            <div class="mx-3">
+                                <li>Industrial effluents</li>
+                            </div>
+                            <div>
+                                <li>Agricultural runoff</li>
+                            </div>
+                            <div>
+                                <li>Sewage and wastewater</li>
+                            </div>
+                            <div>
+                                <li>Oil refineries</li>
+                            </div>
+                            <div>
+                                <li>Textile mills</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Purna on bridge at Surat-Navsari Highway</li>
+                                <li>Kaveri on bridge at Billimora-Valsad Road</li>
+                                <li>Ambika at Bilimora</li>
+                                <li>Nalsarovar Lake (Sanand), Dist. Ahmedabad</li>
+                                <li>Mindhola at State Highway Bridge Sachin</li>
+                                <li>Kankoria Lake at Ahmedabad, nr. Balvatika</li>
+                            </div>
+                            <div>
+                                <li>City Lake of Nadiad, Kheta Talav (City Lake), Nadiad, Dist: Kheda</li>
+                                <li>Thol Lake (Kalol), Dist. Mehsana, Thol Pond, Vill: Thol, Tal -Kadi, Dist: Mehsana
+                                </li>
+                                <li>Gomti Lake, Opp: Ranchodaji Temple, Dakor, Kheda</li>
+                                <li>Kim at Sahol bridge, Olpad Hansot Road, Dist. Surat</li>
+                                <li>Bindusarovar, Siddhpur (Dist. Patan), Ahmedabad-Palanpur Highway, Siddhpur, Dist.
+                                    Patan</li>
+                            </div>
+                            <div>
+                                <li>Tapi at ONGC bridge at Surat</li>
+                                <li>Sursagar Lake at Baroda</li>
+                                <li>Chandola Lake at Ahmedabad</li>
+                                <li>Moonsar Lake of Viramgam</li>
+                                <li>Malav Talav, Dholka</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Kuwadava Lake, Nr. Kuvadva Gidc, Vill. Kuwadava, Dist. Rajkot</li>
+                                <li>B/W Near Indl. Area Borasara & Navapura, Dist. Surat</li>
+                                <li>From Water Works Of Navsari Near Dhudhia Talav</li>
+                                <li>Sabarmati At Mahudi Jain Temple, 150 Km. From Origin</li>
+                                <li>Vheraimata Talav At Anandvherai Mata Talav, Dist. Anand</li>
+                                <li>Narsimehta Talav-Junagadh, Narsinh Mehta Talav, At: Junagadh, Dist: Junagadh</li>
+                                <li>Moticher Lake Near Kakarpar Atomic Power Station, Near Bridge, Moticher, Surat</li>
+                                <li>Olpad, Village Pond, Surat, Near Road, Near Temple, Olpad, Surat</li>
+                                <li>Dhudhia Talav At Navsari, At-Kagadiwad, Navsari City, Dist. Navsari, Gujarat</li>
+                                <li>Mahi After Conf. With Anas At Pardi (Banaswada)</li>
+                                <li>Mahi Near Rajasthan Border At Kadana Dam</li>
+                                <li>Bore Well Of Navsari Gidc Industries Association Office</li>
+                                <li>Lakhota Talav, Jamnagar, Near Pancheshwar Tower, Jamnagar</li>
+                                <li>Hamisar Talav, Bhuj, Patvadi Naku, Dist: Kutch(West)</li>
+                                <li>Anas At Dahod (Kushalgarh), Panchmahal</li>
+                                <li>Ajwah Lake At Sri Sayaji Sabvar, Baroda</li>
+                            </div>
+                            <div>
+                                <li>Kolak At Railway Bridge No. 313 Vapi, Valsad</li>
+                                <li>Panam At Lunawada</li>
+                                <li>Damanganga At Kachigaon U\S At Gidc Wier</li>
+                                <li>Tapi Nr Bardoli (Kapp Bridge)</li>
+                                <li>Balehwar Khadi At N.H. No. 8</li>
+                                <li>Tapi At Ukai, Sherula Bridge</li>
+                                <li>Tapi At Surat U/S Kathore</li>
+                                <li>Tapi At Rander Bridge, Surat</li>
+                                <li>Tapi At Kathore (Nh-8 Bridge)</li>
+                                <li>Bore Well - Bardoli Rest House</li>
+                                <li>Mora-Hajira (Industrial), Hajira</li>
+                                <li>Damanganga At Kachigaon D\S (Daman)</li>
+                                <li>Bore Well Of Palsana Village</li>
+                                <li>Bore Well Of Sachin Gidc</li>
+                                <li>Pandesara (Industrial) Surat</li>
+                                <li>Gabheni Vill, Surat (Industrial)</li>
+                            </div>
+                            <div>
+                                <li>Dahod</li>
+                                <li>Nadiad</li>
+                                <li>Godhara</li>
+                                <li>Junagadh</li>
+                                <li>Narmada At Chandod</li>
+                                <li>Mahi At Sevalia</li>
+                                <li>Mahi At Mujpur</li>
+                                <li>Mahi At Vasad</li>
+                                <li>Dhadar At Kothada</li>
+                                <li>Shedhi At Kheda</li>
+                                <li>Well At Olpad</li>
+                                <li>Mahi At Umeta Bridge</li>
+                                <li>Kolak At Patlia Bdg.</li>
+                                <li>Mahi At Virpur</li>
+                                <li>Tapi At Mandavi</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+
+
+            <!-- HARYANA -->
+            <div id="data8" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 bg-bgpowerbi m-1 py-6">
+                                <h1 class="text-7xl font-black text-center font-custom text-amber-400">Haryana
+                                </h1>
+                            </div>
+                            <div class=""><img src="data/haryana/eut_hr.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">6</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">22.71</h1>
+                            </div>
+                            <div class=""><img src="data/haryana/ph_hr.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/haryana/wqi_hr.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/haryana/fec_hr.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-row justify-evenly gap-8">
+
+                    <!-- POLLUTION SOURCES -->
+                    <div>
+                        <h1 class="text-cyan-500 font-bold  text-2xl pb-2 text-center">Detected sources of Pollution
+                        </h1>
+                        <div class="flex flex-row justify-evenly text-sm text-white">
+                            <div class="mx-3">
+                                <li>Agricultural runoff</li>
+                                <li>Sewage and wastewater</li>
+                            </div>
+                            <div>
+                                <li>Industrial effluents</li>
+                                <li>Construction activities</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Sohna Lake</li>
+                                <li>Sultanpur Lake, Gurugram</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Yamuna at Sonepat</li>
+                                <li>Yamuna at Kalanaur, Yamuna Nagar</li>
+                                <li>Yamuna at Hathnikund</li>
+                                <li>Sukha Lake, Chandigarh</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+
+
+
+            <!-- HIMACHAL PRADESH -->
+            <div id="data9" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl bg-bgpowerbi m-1 py-10">
+                                <h1 class="text-4xl font-black text-center font-custom text-amber-400">Himachal Pradesh
+                                </h1>
+                            </div>
+                            <div class=""><img src="data/himachalpradesh/eut_hp.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">89</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">16.92</h1>
+                            </div>
+                            <div class=""><img src="data/himachalpradesh/ph_hp.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/himachalpradesh/wqi_hp.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/himachalpradesh/fec_hp.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+
+                    <!-- POLLUTION SOURCES -->
+                    <div>
+                        <h1 class="text-cyan-500 font-bold  text-2xl pb-2 text-center">Detected sources of Pollution
+                        </h1>
+                        <div class="flex flex-row justify-evenly text-sm text-white">
+                            <div>
+                                <li>Agricultural runoff</li>
+                            </div>
+                            <div>
+                                <li>Sewage and wastewater</li>
+                            </div>
+                            <div>
+                                <li>Industrial effluents</li>
+                            </div>
+                            <div>
+                                <li>Tourism-related pollution</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-sm ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li> Riwalsar Lake</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Yamuna, U/S Paonta Sahib</li>
+                                <li>Suketi Khad at D/S Mandi</li>
+                                <li>Beas at D/S Mandi</li>
+                                <li>Gobindsagar Lake at Bilaspur</li>
+                                <li>Satluj at D/S Slapper</li>
+                                <li>Satluj at U/S Slapper</li>
+                                <li>Rewalsar Lake (Towards Mela Ground)</li>
+                                <li>Beas at Exit of Tunnel Dehal Power House</li>
+                                <li>Gobindsagar Lake D/S of Bilaspur Town</li>
+                                <li>Satluj at Nepthazakhai</li>
+                                <li>Beas at U/S Kullu</li>
+                                <li>Beas at D/S Kullu</li>
+                                <li>Satluj at U/S Tatapani</li>
+                                <li>Beas at D/S Pandoh Dam</li>
+                                <li>Parvati Before Conf. to River Beas</li>
+                                <li>Satluj B/C with River Spiti at Khab, Distt. Kinnaur</li>
+                                <li>Satluj at Khab</li>
+                                <li>Beas at U/S Manali</li>
+                                <li>Giri D/S Sataun</li>
+                                <li>Hand Pump at Shimla</li>
+                                <li>Parvati at D/S Manikaran</li>
+                                <li>Beas at U/S Pandon Dam</li>
+                            </div>
+                            <div>
+                                <li>Baspa at U/S Reservoir Baspa Project</li>
+                                <li>Beas at D/S Jaisinghpur</li>
+                                <li>Sirsa, U/S Sitomajri Nallaharh</li>
+                                <li>Giri at D/S Yashwant Nagar</li>
+                                <li>Satluj at D/S Bhakhra</li>
+                                <li>Siuel at D/S Surgani</li>
+                                <li>Ashwani at U/S Yashwant Nagar</li>
+                                <li>Ravi at D/S Chamera III HEP</li>
+                                <li>Renuka Lake, 35 Km from Patna Sahib North</li>
+                                <li>Giri at U/S CCI Mines</li>
+                                <li>Pabbar at D/S Swarakuddu</li>
+                                <li>Hand Pump at Chamunda Devi Temple/Town</li>
+                                <li>Mehatpur Industrial Area</li>
+                                <li>Dharamshala Kangra D/S of MSW Dumping Site</li>
+                                <li>Hand Pump at Hamirpur Town</li>
+                                <li>Mandi-D/S of MSW Dumping Site</li>
+                                <li>Hand Pump at Nadaun Town</li>
+                                <li>Beas at D/S Pong Dam</li>
+                                <li>Ravi at U/S Chamba</li>
+                                <li>Sirsa at D/S Nalagarh Distt. Solan</li>
+                                <li>Ravi at U/S Madhopur</li>
+                                <li>Sirsa, D/S Nalagarh Bridge</li>
+                            </div>
+                            <div>
+                                <li>Una Industrial Area</li>
+                                <li>Solan-D/S of MSW Dumping Site</li>
+                                <li>Hand Pump at Kangra Temple</li>
+                                <li>Hand Pump at Sansarpur Terrace IA</li>
+                                <li>Hand Pump at Tahliwal IA</li>
+                                <li>Hand Pump at Chintpurni Temple/Town</li>
+                                <li>Hand Pump at Solan</li>
+                                <li>Barotiwala Industrial Area</li>
+                                <li>Hand Pump at Jwalamukhi Temple</li>
+                                <li>Paonta Sahib Industrial Area</li>
+                                <li>Swan at D/S Nangal Distt. Una</li>
+                                <li>Neugal at D/S Thural</li>
+                                <li>Pongdam Lake at Pong Village</li>
+                                <li>Ravi at Chamera Reservoir</li>
+                                <li>Binwa at D/S Paprola/Baijnath</li>
+                                <li>Ravi at D/S of Chamba Town</li>
+                                <li>Renuka Lake at Renuka, Sirmaur</li>
+                                <li>Spiti at Khab</li>
+                                <li>Batta at U/S Paonta</li>
+                                <li>Yamuna, D/S Paonta Sahib</li>
+                                <li>Pabbar at U/S Dhambari</li>
+                                <li>Parvati at U/S Manikaran</li>
+                            </div>
+                            <div>
+                                <li>Hand Pump at Nahan</li>
+                                <li>Kala Amb Industrial Area</li>
+                                <li>At Kala Amb, H.P</li>
+                                <li>Hand Pump at Kala Amb</li>
+                                <li>At Paonta Sahib, H.P</li>
+                                <li>Yamuna, U/S Paonta Sahib</li>
+                                <li>Beas at D/S Dehragopipur</li>
+                                <li>Beas at D/S Alampur</li>
+                                <li>Khaziar Lake</li>
+                                <li>Baddi Industrial Area</li>
+                                <li>At Damtal, H.P</li>
+                                <li>At Barotiwala, H.P</li>
+                                <li>Tons River</li>
+                                <li>Beas at D/S Manali</li>
+                                <li>Satluj at D/S Rampur</li>
+                                <li>Satluj at U/S Rampur</li>
+                                <li>Khaziar Lake U/S Mandi</li>
+                                <li>Beas at D/S Aut</li>
+                                <li>Largi at D/S</li>
+                                <li>Pabbar at U/S Rohru</li>
+                                <li>Batta B/C to Yamuna</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+
+
+
+            <!-- KARNATAKA -->
+            <div id="data10" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 bg-bgpowerbi m-1 py-6">
+                                <h1 class="text-7xl font-black text-center font-custom text-amber-400">Karnataka</h1>
+                            </div>
+                            <div class=""><img src="data/karnataka/eut_kn.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">214</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">25.52</h1>
+                            </div>
+                            <div class=""><img src="data/karnataka/ph_kn.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/karnataka/wqi_kn.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/karnataka/fec_kn.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+
+                    <!-- POLLUTION SOURCES -->
+                    <div>
+                        <h1 class="text-cyan-500 font-bold  text-2xl pb-2 text-center">Detected sources of Pollution
+                        </h1>
+                        <div class="flex flex-row justify-evenly text-sm text-white">
+                            <div>
+                                <li>Agricultural runoff</li>
+                            </div>
+                            <div>
+                                <li>Sewage and wastewater</li>
+                            </div>
+                            <div>
+                                <li>Industrial effluents</li>
+                            </div>
+                            <div>
+                                <li>Mining activities</li>
+                            </div>
+                            <div>
+                                <li>Textile mills</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Hosakerehalli Lake</li>
+                                <li>Machohalli Lake</li>
+                                <li>Doddabidaradkallu Lake</li>
+                                <li>Yelemallappa Shetty Lake</li>
+                                <li>Subramanyapura Tank</li>
+                                <li>Alur Lake</li>
+                                <li>Viswaneedam Lake</li>
+                                <li>Hoskere Lake</li>
+                                <li>Andhra Halli Lake</li>
+                                <li>Kammagondanahalli Lake</li>
+                                <li>Mulbagalu Lake</li>
+                                <li>Gubbalal Lake</li>
+                                <li>Ramammana Kere</li>
+                                <li>Karihobananahalli Lake</li>
+                                <li>Parappana Agrahara Lake</li>
+                                <li>Kaikondanahalli Lake</li>
+                                <li>Nayandanahalli Tank</li>
+                                <li>Vengaiyyanake (KR Puram Lake)</li>
+                                <li>Rampura Lake</li>
+                                <li>Kalkere Tank</li>
+                                <li>Chandapura Lake</li>
+                                <li>Bheemsandra Tank</li>
+                                <li>Uttarahalli Doraikere</li>
+                                <li>Kachohalli Lake</li>
+                                <li>Dasarahalli Tank</li>
+                                <li>Shivapura Tank</li>
+                                <li>Byrasandra Tank</li>
+                                <li>Sheelavanta - Whitefield Lake</li>
+                                <li>Rachenahalli Lake</li>
+                                <li>Ulsoor Lake Training Centre of Fish Breeding</li>
+                                <li>Kammasandra Lake</li>
+                                <li>Doddakannehalli Lake</li>
+                                <li>Seetharampalya Lake</li>
+                                <li>Basavanapura Lake</li>
+                                <li>Devasandra Lake</li>
+                                <li>Arkavathi at D/S of Kanakapura Town</li>
+                                <li>Rayasandra Lake</li>
+                                <li>Chelekere Lake</li>
+                            </div>
+                            <div>
+
+                                <li>Sharanabasaveshwara Kere Tank</li>
+                                <li>Amruthahalli Lake</li>
+                                <li>Manchalapur Tank, Manchalapur, Raichur</li>
+                                <li>Veerapura Tank</li>
+                                <li>Doddakere Tank (Kunigal)</li>
+                                <li>Yelahanka Tank</li>
+                                <li>Somasundrapalya Lake</li>
+                                <li>Yelachenahalli Lake</li>
+                                <li>Agaram Lake</li>
+                                <li>Tubarahalli Tank</li>
+                                <li>Benniganahalli Lake</li>
+                                <li>Nelamangala Lake</li>
+                                <li>Mangamanapalya Lake (Swarana Kunte)</li>
+                                <li>Garudacharpalya Tank</li>
+                                <li>Ainorakatte Kere</li>
+                                <li>Avali Kere</li>
+                                <li>Kakati Pond</li>
+                                <li>Sathenahallidoddakere Tank</li>
+                                <li>Jungu Kere (Devarabeesanahalli Lake)</li>
+                                <li>Kokkanaghattadodda Kere Tank</li>
+                                <li>Hulikere Lake</li>
+                                <li>Handikere (Koppal) Tank</li>
+                                <li>Lakshmantirtha at D/S of Kattemalavadi</li>
+                                <li>Lakshmantirtha at D/S of Hunsur Town</li>
+                                <li>Bhutanala Lake</li>
+                                <li>Kanchanahalli Koppalu Kere</li>
+                                <li>Killa Lake</li>
+                                <li>Bhadra at D/S of Bhadravathi</li>
+                                <li>Herekere Tank</li>
+                                <li>Malprabha at Badami Bridge, Karnataka</li>
+                                <li>Ghatprabha at D/S of Mudhol Rd. Cross Bridge</li>
+                                <li>Asangi Nalla at Asangi Village</li>
+                                <li>Malprabha at D/S of Aihole Town</li>
+                                <li>Sudanakere Lake</li>
+                                <li>Someshwarakere Tank</li>
+                                <li>Tungabhadra at D/S of HPF</li>
+                                <li>Nuggikere Lake</li>
+                                <li>Sodharahallikere</li>
+                            </div>
+                            <div>
+                                <li>Singasandra Lake</li>
+                                <li>Puttenahalli Lake</li>
+                                <li>Chikkabanavara Lake</li>
+                                <li>Byramangala Lake</li>
+                                <li>Allalasandra Lake</li>
+                                <li>Ulsoor Lake Temple</li>
+                                <li>Haralur Lake</li>
+                                <li>Kowdhenahalli Tank</li>
+                                <li>Melekote Tank</li>
+                                <li>Arakere Lake</li>
+                                <li>Ayyanakere Lake</li>
+                                <li>Kalena Agrahara Lake</li>
+                                <li>Pattandur Agrahara Lake</li>
+                                <li>Devarabeesanahalli Lake</li>
+                                <li>Narasipura Lake</li>
+                                <li>Jakkur Lake</li>
+                                <li>Dhorekere Tank</li>
+                                <li>Anchepalya Lake</li>
+                                <li>Malathahalli Lake</li>
+                                <li>Yediyur Tank</li>
+                                <li>Puttenahalli Lake</li>
+                                <li>Herohalli Tank</li>
+                                <li>Hebbal Lake</li>
+                                <li>Sarakki Lake</li>
+                                <li>Doddanekundi Lake</li>
+                                <li>Nallurahalli Lake</li>
+                                <li>Kundalahalli Lake</li>
+                                <li>Kengeri Tank</li>
+                                <li>Ullalu Lake</li>
+                                <li>Gangondanahalli Lake</li>
+                                <li>Varthur Lake</li>
+                                <li>Bellandur Lake</li>
+                                <li>Singapura Lake</li>
+                                <li>Gottigere Lake</li>
+                                <li>Navalooru Lake</li>
+                                <li>Mydala Tank</li>
+                                <li>Angol MI Tank</li>
+                            </div>
+                            <div>
+                                <li>Devarayasamudra Lake</li>
+                                <li>Kogilu Kere</li>
+                                <li>Chinnakuruchi Kere</li>
+                                <li>Chinnappanahalli Lake</li>
+                                <li>Devarakere Tank</li>
+                                <li>Ramammana Kere</li>
+                                <li>Hesaraghatta Lake</li>
+                                <li>Abbigere Lake</li>
+                                <li>Kasavanahalli Lake</li>
+                                <li>Narasapura Lake</li>
+                                <li>Nagavara Lake</li>
+                                <li>Kempambudhi Tank</li>
+                                <li>Madhure Tank</li>
+                                <li>Hulimavu Lake</li>
+                                <li>Madiwala Tank</li>
+                                <li>Begur Tank</li>
+                                <li>Sompura Lake</li>
+                                <li>Kodi Singasandra Lake</li>
+                                <li>Lalbagh Tank</li>
+                                <li>Ibbalur Lake</li>
+                                <li>Kothanuru Lake</li>
+                                <li>Gottigere Lake</li>
+                                <li>Anekal Doddakere Tank</li>
+                                <li>Bhattarhalli Lake</li>
+                                <li>Sadaramangala Lake</li>
+                                <li>Bhathikere Tank</li>
+                                <li>Sankey Tank</li>
+                                <li>Jigani Tank</li>
+                                <li>Vibhuthipura Lake</li>
+                                <li>Makana (Kandali) Kere</li>
+                                <li>Yennehole Lake</li>
+                                <li>Dalavai Lake</li>
+                                <li>Limbhabudi Lake</li>
+                                <li>Hebbal Lake</li>
+                                <li>Shettykere Lake</li>
+                                <li>Kukkrahalli Lake</li>
+                                <li>Karanjikere Tank</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Matadakere Tank (Arasanakere)</li>
+                                <li>Kagina D/S of Sewage Disposal Point</li>
+                                <li>Bhima at D/S of Road Bridge at Gangapur Village</li>
+                                <li>Bhima at Ferozabad Village (D/S)</li>
+                                <li>Tungabhadra at Ullanur, Karnataka</li>
+                                <li>Bhima at Confluence of Jewargi Town Sewage Disposal Point</li>
+                                <li>Kagina at Shahabad Bridge, Karnataka</li>
+                                <li>Shimsha at D/S of Bridge, Halagur</li>
+                                <li>Cauvery at Sathiyagalam Bridge</li>
+                                <li>Kabini at Bathing Ghat, Nanjangud</li>
+                                <li>Cauvery at Bannur Bridge</li>
+                                <li>Cauvery at Sri Rangapattanna, D/S of Road Bridge</li>
+                                <li>Kabbani at Water Intake of KIADB at Nanjangud</li>
+                                <li>Cauvery at Ranganathittu</li>
+                                <li>Kabbani at Causeway Sattur</li>
+                                <li>Cauvery at D/S of Karekuara Village</li>
+                                <li>Cauvery at KRS Dam, Balamurikshetra</li>
+                                <li>Kabbani at Saragur Village D/S</li>
+                                <li>Cauvery at Napokulu Bridge (D/S)</li>
+                                <li>Cauvery at Kushal Nagar U/S (Near Baichanahalli)</li>
+                                <li>Hemavathi at D/S of Holenarasipura Town at Ramadevala Weir</li>
+                            </div>
+                            <div>
+                                <li>Yagachi Near Pumping Station, Hassan City</li>
+                                <li>Bhadra at Malleswaram D/S of KIOCL Karnataka</li>
+                                <li>Bhadra at U/S of KIOCL, Karnataka</li>
+                                <li>Krishna - Ankali Bridge Along Chikkodi Kagwad Road</li>
+                                <li>Malprabha at D/S of Khanapur Village, Karnataka</li>
+                                <li>Krishna at U/S of Ugarkhurd Barrage, Karnataka</li>
+                                <li>Tungabhadra at New Bridge, Karnataka</li>
+                                <li>Malprabha at Water Abstraction Point to Hubli, Dharwar, Karnataka</li>
+                                <li>Ghatprabha at W.A. Point to Gokak Town, Karnataka</li>
+                                <li>Tungabhadra at Harihar Water Supply Intake, Karnataka</li>
+                                <li>Bhadra at D/S of KIOCL Road Bridge, Near Holehunnur, Karnataka</li>
+                                <li>Tungabhadra at Jackwell Point, Karnataka</li>
+                                <li>Tungabhadra at D/S of Shimoga Town, Karnataka</li>
+                                <li>Tungabhadra at Honnali Bridge, Karnataka</li>
+                                <li>Confluence Point of Tungabhadra and Bhadra at Kudli</li>
+                                <li>Tungabhadra at U/S of HPF, Karnataka</li>
+                                <li>Tungabhadra at Haralahalli Bridge, Karnataka</li>
+                                <li>Bhadra at U/S of MPM, Karnataka</li>
+                                <li>Arkavathi at T.G. Halli Reservoir</li>
+                                <li>Shimsha at D/S of Highway Bridge, Yediyar</li>
+                                <li>Arkavathi at Hesaraghatta Reservoir</li>
+                            </div>
+                            <div>
+                                <li>Basavanahallikere Tank</li>
+                                <li>Sanavalli Dam, Mungod</li>
+                                <li>Nirasagarakere Tank</li>
+                                <li>Kunduvadakere Lake</li>
+                                <li>Kelegere Lake</li>
+                                <li>Kondagjjikere Lake</li>
+                                <li>Pilikula Tank</li>
+                                <li>Unakalkere Lake</li>
+                                <li>Koushika Kere</li>
+                                <li>Hunasina Kere Lake</li>
+                                <li>Sahana Lake</li>
+                                <li>B Katihalli Kere</li>
+                                <li>Sankalapurakere Tank</li>
+                                <li>Joladakatte Tank</li>
+                                <li>Peremanahalli Kere</li>
+                                <li>Lingappanakatte Tank</li>
+                                <li>Mavinakere Tank</li>
+                                <li>Vimanabhuthikere Tank</li>
+                                <li>Shanthisagara Kere Tank</li>
+                                <li>Sathyamangala Kere Pond</li>
+                                <li>Hanumanthapura Kattete Tank</li>
+                                <li>Ganigara Hosahalli Kere Tank</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+
+
+
+
+            <!-- KERALA -->
+            <div id="data11" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 bg-bgpowerbi m-1 py-6">
+                                <h1 class="text-7xl font-black text-center font-custom text-amber-400">Kerala</h1>
+                            </div>
+                            <div class=""><img src="data/kerala/eut_kl.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">118</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">27.00</h1>
+                            </div>
+                            <div class=""><img src="data/kerala/ph_kl.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/kerala/wqi_kl.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/kerala/fec_kl.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+
+                    <!-- POLLUTION SOURCES -->
+                    <div>
+                        <h1 class="text-cyan-500 font-bold  text-2xl pb-2 text-center">Detected sources of Pollution
+                        </h1>
+                        <div class="flex flex-row justify-evenly text-sm text-white">
+                            <div>
+                                <li>Agricultural runoff</li>
+                            </div>
+                            <div>
+                                <li>Sewage and wastewater</li>
+                            </div>
+                            <div>
+                                <li>Industrial effluents</li>
+                            </div>
+                            <div>
+                                <li>Mining activities</li>
+                            </div>
+                            <div>
+                                <li>Pesticides from plantation activities</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Vembanad Lake, Kochi (Oil Tanker Jetty), Kerala</li>
+                                <li>Pond at (Padmanabha) Sree Padmanabha Swamy Temple (TVPM)</li>
+                                <li>Akkulam Lake at Oruvathilkotta, Thiruvananthapuram</li>
+                                <li>R Kadambayar at Brahmapuram, Alappuzha</li>
+                                <li>Ashtamudi Lake near KSRTC Bus Depot, Kollam</li>
+                                <li>Periyar near Alwaye-Eloor, Alappuzha, Kerala</li>
+                                <li>R Corapuzha at Kanayankode</li>
+                                <li>Punnalpet Tippalam (Tellicherry Municipality)</li>
+                            </div>
+                            <div>
+                                <li>Ashtamudi Lake near M/S Kundara Ceramics, Kollam</li>
+                                <li>Ashtamudi Lake at Quilon, Kerala</li>
+                                <li>Ashtamudi Lake at Thoppilakadavu, Kollam</li>
+                                <li>Ashtamudi Lake at Perumon, Kollam</li>
+                                <li>Akkulam Bridge at Akkulam Lake, Thiruvananthapuram</li>
+                                <li>R Ramapuram at Ramapuram Bridge</li>
+                                <li>Brahmapuram M.S.W. Dumpark (Ernakulam)</li>
+                                <li>Kannur (Municipality), Kannur</li>
+                            </div>
+                            <div>
+                                <li>Kayamkulam, Kerala</li>
+                                <li>Paravur, Kerala</li>
+                                <li>R Ithikkara at Ithikkara</li>
+                                <li>Kodungalloor, Kerala</li>
+                                <li>Karamana at Moonnattumukku</li>
+                                <li>Kochi (Oil Tanker Jetty)</li>
+                                <li>Chitthrapuzha at Irumpanam</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Pond Near HMT Colony, North</li>
+                                <li>Periyar at Sewage Discharge Point, Kerala</li>
+                                <li>River Periyar at Pathalam</li>
+                                <li>R Puzhackal at Puzhackal Bridge</li>
+                                <li>R Periyar at Kalamassery</li>
+                                <li>R Bharathapuzha at Kuttippuram</li>
+                                <li>R Uppala at Uppala Bridge</li>
+                                <li>Meenachil at Kidangoor, Kerala</li>
+                                <li>Kodungalloor</li>
+                                <li>Chaliyar at Chungapally</li>
+                                <li>R Ancharakandy at Meruvamba</li>
+                                <li>River Periyar at Muppathadam</li>
+                                <li>R Bharathapuzha at Pattambi</li>
+                                <li>R Mamom at Mamom Bridge</li>
+                                <li>Muvattapuzha at Vettikkattumukku, Kerala</li>
+                                <li>Vamanapuram, Kerala</li>
+                                <li>R Korayar at Kanjikode</li>
+                                <li>R Pullur at Pullur Bridge</li>
+                                <li>R Kallai at Kallai Bridge</li>
+                                <li>RSVR at Malampuzha</li>
+                                <li>Pamba Down, Kerala</li>
+                                <li>R Kuppam at Thaliparamba</li>
+                                <li>Thekkady</li>
+                                <li>R Manjeswar at Bajrakkara Bridge</li>
+                                <li>R Ayroor at Ayroor Bridge</li>
+                                <li>R Neelaswaram at Hosdurg</li>
+                                <li>R Kadambayar at Manckakadavu</li>
+                                <li>R Periyar at Purappallikavu</li>
+                                <li>R Thallassery at Pathippalam</li>
+                                <li>Periyar at Kalady, Kerala</li>
+                            </div>
+                            <div>
+                                <li>R Neyyar at Aruvipuram</li>
+                                <li>Manimala at Thondra, Kerala</li>
+                                <li>R Neyyar at Amaravila, Kerala</li>
+                                <li>R Karuvannur at Karuvannur Bridge</li>
+                                <li>Manimala at Kalloopara</li>
+                                <li>Chandragiri at Padiyathadka</li>
+                                <li>R Keecheri at Vadakkanchery Bridge</li>
+                                <li>Kallada at Perumthottam Kadavu, Punaloor, Kerala</li>
+                                <li>Vellayani Lake at Vandithadam, Thiruvananthapuram</li>
+                                <li>Pond at (Padmanabha) Sree Padmanabha Swamy Temple (TVPM)</li>
+                                <li>R Mogral at Mogral Bridge</li>
+                                <li>R Shriya at Angadimogaru</li>
+                                <li>R Ancharakandy at Meruvamba</li>
+                                <li>Chaliyar at Koolimadu, Kerala</li>
+                                <li>Aalumkulam Pond at Koorkkanchery, Thrissur</li>
+                                <li>Achenkoil at Chennithula</li>
+                                <li>R Neelaswaram at Nambiarakall Dam</li>
+                                <li>R Mahe at Valayam, Kerala</li>
+                                <li>Mananchira Pond at Kozhikode</li>
+                                <li>Kabbani at Muthankara</li>
+                                <li>Sasthamcotta Lake, Kerala</li>
+                                <li>Thrikaikunnu Chira, Koothparamba, Kannur</li>
+                                <li>Chirakkal Chira, Kadalayi, Kannur</li>
+                                <li>Vembanadu at Pathiramanal (Alappuzha)</li>
+                                <li>Theerthamkara Pond at Padannakkad, Kanhangad Municipality</li>
+                                <li>Kadalundi at Thirurangady</li>
+                                <li>R Thirur at Thalakkadathur Bridge</li>
+                                <li>Bhavani at Elachivazhy</li>
+                                <li>Pazhassi Reservoir (Kannur)</li>
+                                <li>Lake Vembanadu at Pathiramanal (Alappuzha)</li>
+                            </div>
+                            <div>
+                                <li>R Kuttiyady at Kuttiyady Estate</li>
+                                <li>R Kavvai at Kuttiyol Palam</li>
+                                <li>R Peruvamba at Chandappura</li>
+                                <li>RSVR at Edamalayar</li>
+                                <li>RSVR at Bhoothathankettu</li>
+                                <li>R Kuppam at Rayarom</li>
+                                <li>Lake Karlad at Wayanad</li>
+                                <li>Pookote</li>
+                                <li>Chalakudy at Pulickalkadu</li>
+                                <li>Pookode Lake at Pookode</li>
+                                <li>Periyar Lake at Thekkady, Kerala</li>
+                                <li>Chellora Trenching Ground (Kannur)</li>
+                                <li>Karukamani</li>
+                                <li>Hazardous Waste Dump (Ambalamugal)</li>
+                                <li>Vyttila, Ernakulam</li>
+                                <li>Well at Chungapally, Kerala</li>
+                                <li>Edayar, Ernakulam Dist.</li>
+                                <li>Kalamassery, Ernakulam</li>
+                                <li>Well at Eloor, Kerala</li>
+                                <li>Mavoor, Kozhikode Dist., Kerala</li>
+                                <li>Nedumangad, Thiruvananthapuram</li>
+                                <li>Punkunnam, Trissur Dist.</li>
+                                <li>Achenkoil at Thumpamon</li>
+                                <li>Ithikkara at Ayur, Kerala</li>
+                                <li>Pamba at Thakazhy, Kerala</li>
+                                <li>Karingode at Kakkadavu</li>
+                                <li>R Kadalundi at Hajirappally</li>
+                                <li>Pamba at Chengannur, Kerala</li>
+                                <li>R Pallickal at Nellimukal</li>
+                                <li>Sasthamcotta Lake</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+
+
+
+            <!-- MADHYA PRADESH -->
+            <div id="data12" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl bg-bgpowerbi m-1 py-9">
+                                <h1 class="text-5xl font-black text-center font-custom text-amber-400">Madhya Pradesh
+                                </h1>
+                            </div>
+                            <div class=""><img src="data/madhyapradesh/eut_mp.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">41</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">26.08</h1>
+                            </div>
+                            <div class=""><img src="data/madhyapradesh/ph_mp.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/madhyapradesh/wqi_mp.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/madhyapradesh/fec_mp.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+                    <!-- POLLUTION SOURCES -->
+                    <div>
+                        <h1 class="text-cyan-500 font-bold  text-2xl pb-2 text-center">Detected sources of Pollution
+                        </h1>
+                        <div class="flex flex-row justify-evenly text-sm text-white">
+                            <div>
+                                <li>Agricultural runoff</li>
+                            </div>
+                            <div>
+                                <li>Sewage and wastewater</li>
+                            </div>
+                            <div>
+                                <li>Industrial effluents</li>
+                            </div>
+                            <div>
+                                <li>Mining activities</li>
+                            </div>
+                            <div>
+                                <li>Thermal power plants</li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Shahpura Lake near Spill-Outlet at Bhopal (M.P.)</li>
+                                <li>Lower Lake Spill-Outlet near Kalighat, Bhopal (M.P.)</li>
+                            </div>
+                            <div>
+                                <li>Bichia, Bridge Govindgarh Road</li>
+                                <li>Janunia Talab near Water Supply Intake Well, Sehore (M.P.)</li>
+                            </div>
+                            <div>
+                                <li>Hanumantal, Jabalpur</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Betwa D/S after Mixing Bais at Vidisha</li>
+                                <li>Parvati A/C of Vindhyachal Nalla, Pilukhedi</li>
+                                <li>Upper Lake near Water Supply Intake Well Bairagarh, Bhopal </li>
+                                <li>Moti Talab at Balaghat</li>
+                                <li>Upper Lake at Water Supply Intake Well near Kamla Park, Bhopal </li>
+                                <li>Upper Lake near Water Supply Intake Well, Yatch Club, Bhopal </li>
+                                <li>Upper Lake near Water Supply Intake Well near Karbala, Bhopal</li>
+                                <li>Gour at Bhoga Door, Jabalpur</li>
+                                <li>Narmada at Mandla near Road Bridge</li>
+                                <li>Koptal Lake at Water Supply Intake Point, Chhatarpur</li>
+                                <li>Kolar Dam Water Supply Intake Well, District Sehore</li>
+                                <li>Betwa near Intake Point, Vidisha</li>
+
+                            </div>
+                            <div>
+                                <li>Betwa at Charantirghat, Vidisha</li>
+                                <li>Suptal, Jabalpur</li>
+                                <li>Ranital Talab, Jabalpur</li>
+                                <li>Dal Sagar Talab, District Seoni</li>
+                                <li>Gokalpur Talab, District Jabalpur</li>
+                                <li>Narmada at Sethanighat</li>
+                                <li>Denwa near Sarni, Road Bridge</li>
+                                <li>Narmada at Hoshangabad D/S</li>
+                                <li>Narmada at Korighat</li>
+                                <li>Narmada at Hoshangabad U/S</li>
+                                <li>Nagchun Talab at Khandwa</li>
+                                <li>Ganga Sagar, Jabalpur</li>
+                            </div>
+                            <div>
+                                <li>Yashwant Sagar at Indore</li>
+                                <li>Sirpur Talab at Indore</li>
+                                <li>Bilawali Talab at Indore</li>
+                                <li>Mitha Talab, Dewas</li>
+                                <li>Rani Talab, Rewa</li>
+                                <li>Pond Water at Lakoda</li>
+                                <li>Govindgarh Lake</li>
+                                <li>Madhav Lake, Shivpuri</li>
+                                <li>Bagdoon Talab</li>
+                                <li>Pithampur Sanjay Jalashay</li>
+                                <li>Sitapat Talab, Dhar</li>
+                                <li>Pipliya Pala Talab, Indore</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+
+
+            <!-- MAHARASHTRA -->
+            <div id="data13" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl bg-bgpowerbi m-1 py-8">
+                                <h1 class="text-6xl font-black text-center font-custom text-amber-400">Maharashtra
+                                </h1>
+                            </div>
+                            <div class=""><img src="data/maharashtra/eut_mh.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">186</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">25.54</h1>
+                            </div>
+                            <div class=""><img src="data/maharashtra/ph_mh.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/maharashtra/wqi_mh.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/maharashtra/fec_mh.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+                    <!-- POLLUTION SOURCES -->
+                    <div>
+                        <h1 class="text-cyan-500 font-bold  text-2xl pb-2 text-center">Detected sources of Pollution
+                        </h1>
+                        <div class="flex flex-row justify-evenly text-sm text-white">
+                            <div>
+                                <li>Agricultural runoff</li>
+                            </div>
+                            <div>
+                                <li>Sewage and wastewater</li>
+                            </div>
+                            <div>
+                                <li>Industrial effluents</li>
+                            </div>
+                            <div>
+                                <li>Textile mills</li>
+                            </div>
+                            <div>
+                                <li>Oil refineries</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Mutha at Deccan Bridge, Deccan, Pune</li>
+                                <li>Pawana at Dapodi Bridge at Pawana-Mulla Sangam, Pune</li>
+                                <li>Mula at Harrison Bridge near Mula-Pawana Sangam</li>
+                                <li>Indrayani at U/S of Moshigaon, Haweli, Pune</li>
+                                <li>Bhima at Narsinghpur (D/S af. confl. with R. Nira)</li>
+                                <li>Vel at Shikrapur, Shirur, Pune</li>
+                                <li>Nira at U/S of Jubilant Organosis (Dattaghat), Baramati, Pune</li>
+                                <li>Bhima at Koregaon near Koregaon Bridge, Shirur, Pune</li>
+                                <li>Nira at Shindewadi, Shirval, Khandala, Satara</li>
+                                <li>Sina near Laboti Toll Naka, Laboti, Mohal, Solapur</li>
+                                <li>Nira at Sarole BDG on Pune-Bangalore Highway</li>
+                                <li>Chandrabhaga U/S of Pandharpur Town</li>
+                                <li>Bhima River-Backwater of Ujani Dam, Kumbargaon, Indapur</li>
+                                <li>Kalu at Atale Village, Maharashtra</li>
+                                <li>Pedhi near Road Bridge at Dadhi-Pedhi Village, Bhatkuli, Amravati</li>
+                                <li>Penganga at Mehkar-Buldana ad Bridge at Mehkar, Buldhana</li>
+                                <li>Wainganga D/S of Gaurav Paper Mills, near Jackwell</li>
+                                <li>Kundalika River near Salav Bridge (Saline Zone), Salav, Raigad</li>
+                                <li>Purna nr Achalpur-Amravati Rd BDG, Asegaon, Amravati</li>
+                                <li>Wena at D/S Mohata Mills, Hinganghat-Wadner Rd</li>
+                                <li>Godavari at Kapila-Godavari Confluence Point, Tapovan</li>
+                                <li>Patalganga River at D/S of Kharpada Bridge, Khalapur, Raigad</li>
+                                <li>Wardha at U/S of ACC Ghuggus, Chandrapur</li>
+                                <li>Wardha at Confluence Point of Penganga & Wardha at Juad</li>
+                                <li>Wena at U/S of Mohata Mills, nr Rly BDG, Hinganghat</li>
+                                <li>Savitri River at Muthavali Village, Mahad, Raigadh</li>
+                                <li>Manjra at D/S of Latur, near Latur-Nanded Bridge</li>
+                                <li>Penganga near Water Supply Scheme of Umarkhed, Yavatmal</li>
+                                <li>Bore Well at Wahegaon, Village- Wahegaon, District- Aurangabad</li>
+                                <li>Mula-Mutha at D/S of Theur, Haweli, Pune</li>
+                            </div>
+                            <div>
+                                <li>Mutha near Veer Savarkar Bhavan, Pune</li>
+                                <li>Mutha at Sangam Bridge near Ganapathy Ghat</li>
+                                <li>Pawana at Pimprigaon, Haweli, Pune</li>
+                                <li>Pawana at Kasarwadi, Haweli, Pune</li>
+                                <li>Bhima at Pune, D/S of Bundgarden</li>
+                                <li>Panchaganga D/S of Kolhapur Town</li>
+                                <li>Godavari at Panchavati at Ramkund</li>
+                                <li>Kanhan D/S of M/S Vidharbha Paper Mill, Sinora</li>
+                                <li>Wardha at D/S of Erai River, Hadasti, Chandrapur</li>
+                                <li>Wainganga D/S of Ellora Paper Mill</li>
+                                <li>Patalganga River at Savroli Bridge, Khalapur, Raigad</li>
+                                <li>Wainganga U/S of Gaurav Paper Mills, near Jackwell</li>
+                                <li>Godavari at Hanuman Ghat, Nashik City</li>
+                                <li>Kanhan U/S of M/S Vidharbha Paper Mill, Sinora</li>
+                                <li>Wardha at U/S of Erai River Hadasti, Chandrapur</li>
+                                <li>Kundalika River at Are Khurd (Saline Zone)</li>
+                                <li>Morna at D/S of Railway Bridge at Akola</li>
+                                <li>Purna A/C Morna, Nandura Vill.</li>
+                                <li>Pawana at Chinchwadgaon, Haweli, Pune</li>
+                                <li>Krishna River at Krishna-Venna Sangam at Mahuli</li>
+                                <li>Krishna at Krishna Bridge, Karad</li>
+                                <li>Panzara near Panzarak SSK Ltd, Panzara, Dhule</li>
+                                <li>Kan River near Sakri Water Works, Sakri, Dhule</li>
+                                <li>Burai before Confluence to Tapi, Mukudas, Dhule</li>
+                                <li>Wainganga U/S of Ellora Paper Mill</li>
+                                <li>Kolar B/C to Kanhan at Kamptee</li>
+                                <li>Nira at D/S of Jubilant Organosis, Pune</li>
+                                <li>Bhima at Pargaon (after confl. with Mule Martha)</li>
+                                <li>Indrayani at D/S of Moshigaon, Haweli, Pune</li>
+                                <li>Chandrabhaga D/S of Pandharpur Town</li>
+                            </div>
+                            <div>
+                                <li>Koradi, Nagpur</li>
+                                <li>Tapi at Bhusawal US</li>
+                                <li>Godavari at Nasik D/S</li>
+                                <li>Kanhan D/S of Nagpur</li>
+                                <li>Wainganga at Ashti</li>
+                                <li>Mithi River</li>
+                                <li>Krishna River at Wai</li>
+                                <li>Bhima at Takli</li>
+                                <li>Purna at Dhupeshwar</li>
+                                <li>Urmodi, Nagthane, Satara</li>
+                                <li>Venna at Mahuli, Satara</li>
+                                <li>Savitri River at Ovale Village</li>
+                                <li>Krishna River at Kshetra Mahuli</li>
+                                <li>Nira at Sangavi, Phaltan, Satara</li>
+                                <li>Wardha D/S of ACC Ghuggus</li>
+                                <li>Ghod at Shirur, Pune</li>
+                                <li>Venna at Varye, Satara</li>
+                                <li>Wardha at Rajura Bridge</li>
+                                <li>Nira at Pulgaon Cotton Mill</li>
+                                <li>Godavari River near Tapovan</li>
+                                <li>Wainganga A/C with Kanhan</li>
+                                <li>Indrayani at D/S of Alandigaon, Pune</li>
+                                <li>Bhima at Pune U/S Vithalwadi</li>
+                                <li>Bhima after confl. with Daunt</li>
+                                <li>Pawana at Sangavigaon, Pune</li>
+                                <li>Mula-Mutha at Mundhawa Bridge</li>
+                                <li>Hiwara D/S of Pachora, Jalgaon</li>
+                                <li>Mula at Aundh Bridge, Aundgaon</li>
+                                <li>Gomai D/S of Shahada, Dhule</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Krishna at Mahabaleshwar Dhom Dam near Koyna Dam</li>
+                                <li>Pawana at Ravet Weir, Ravet, Haweli, Pune</li>
+                                <li>Ulhas at U/S of NRC Bund at Mohane, Maharashtra</li>
+                                <li>Kundalika River at Dhatav at Jackwell, Roha, Raigad</li>
+                                <li>Patalganga River at Gagangiri Maharaj Temple, Khalapur, Raigad</li>
+                                <li>Panchaganga River at Shirol near Shirol Intake Well</li>
+                                <li>Pehlar Dam on Pehlar R. Inlet of Water Works, Vasai, Thane</li>
+                                <li>Amba River at D/S of Waken Bridge-U/S of JS Petro Chemicals, Wakenphata, Roha</li>
+                                <li>Patalganga River at Vyal Pump House, Vyal, Khalapur, Raigad</li>
+                                <li>Patalganga River at Khalapur Pumping Station, Khalapur, Raigad</li>
+                                <li>Surya at Intake of Vasai-Virar W/S Scheme, Masvan, Palghar</li>
+                                <li>Krishna at Kurundwad in Kolhapur, Maharashtra</li>
+                                <li>Bindusara at Beed, Nr Intake Water Pump House Dam</li>
+                                <li>Bhatsa River at D/S of Liberty Oil Mills, Satnel, Thane</li>
+                                <li>Vaitarna near Road Bridge, Gandhare Village, Thane</li>
+                                <li>Godavari at D/S of Paithan at Pathegaon Bridge</li>
+                                <li>Bhatsa River at U/S of Liberty Oil Mills, Satnel, Thane</li>
+                                <li>Surya River at MIDC Pumping Station, Garvashet, Thane</li>
+                                <li>Surya River, U/S of Surya Dam, Dhammi, Vikramgad, Thane</li>
+                                <li>Savitri Jackwell at Upsa Kendre, Nangalwadi, Mahad, Raigad</li>
+                                <li>Godavari at Jayakwadi Dam, Aurangabad</li>
+                                <li>Godavari at U/S of Aurangabad Reservoir, Kaigaon Tokka near Kaigaon Bridge</li>
+                                <li>Muchkundi River at Waked near M/S Asahi India Glass Ltd, Waked, Lanja, Ratnagiri
+                                </li>
+                                <li>Tansa River near Road Bridge, Village Dakewali, Wada, Thane</li>
+                                <li>Mor near Padalshe, Jalgaon</li>
+                                <li>Vashishti at D/S of Three M Paper Mills, Kherdi, Ratnagiri</li>
+                                <li>Dug Well Owned by Shri Shivaji Baban Darekar, Village- Sanaswadi,
+                                    District- Pune</li>
+                                <li>Dug Well at Naregaon, Village- Naregaon, District- Aurangabad
+                                </li>
+                                <li>Dug Well near Jilla Parishad Primary School, Visapur, District- Chandrapur</li>
+                                <li>Bore Well near Railway Crossing at Dongri Buzurg</li>
+                                <li>Dug Well of Mr. Sampat Walunj, Village- Shinde Village, District- Nashik</li>
+                                <li>Bore Well at M/S Spectron Ethers, Village-Rasegaon, District- Nashik</li>
+                            </div>
+                            <div>
+                                <li>Phandarpur, Gangapur, Aurangabad</li>
+                                <li>Amravati D/S Dondaicha, Dhule</li>
+                                <li>Girna at Malegaon (Manmad)</li>
+                                <li>Tapi at Uphad Village</li>
+                                <li>Godavari River at Saikheda</li>
+                                <li>Titur D/S of Chalisgaon, Jalgaon</li>
+                                <li>Godavari River near Someshwar Temple</li>
+                                <li>Godavari at U/S of Gangapur Dam, Nasik</li>
+                                <li>Darna Aswali (Darna Dam), Lgatpuri, Nashik</li>
+                                <li>Bore Well at Katpur, near Z.P School</li>
+                                <li>MSW Site, Pimpri-Chinchwad, Pune</li>
+                                <li>Dug Well at Ranjangaon</li>
+                                <li>Venna at Mahabaleshwar, Satara</li>
+                                <li>Patalganga at Shilphata, Maharashtra</li>
+                                <li>Mutha at Khadakvasla Dam, Khadakvasla, Haweli, Pune</li>
+                                <li>Patalganga near Intake of MIDC W/W, Maharashtra</li>
+                                <li>Kundalika at Roha City, Maharashtra</li>
+                                <li>Bori D/S of Amalner, Jalgaon</li>
+                                <li>Godavari at Nandur-Madmeshwar Dam</li>
+                                <li>Vashishti at U/S of Pophali Nr Konphansawane Bridge</li>
+                                <li>Waghur at Sakegaon B/C Tapi River, Jalgaon</li>
+                                <li>Vashishti at U/S of Three M Paper Mills, Kherdi</li>
+                                <li>Darna at MES Site Pumping Station, Bhagur, Nashik</li>
+                                <li>Darna at Chehedi Pumping Station</li>
+                                <li>Darna River at Bhagur Pumping Station, Bhagur, Nashik</li>
+                                <li>Bore Well at Bale Railway Station Premises, Solapur</li>
+                                <li>Bore Well near Chincholi, Village- Chincholi, District- Solapur</li>
+                                <li>Bore Well at Shete Vasti, Village- Tuljapur District- Solapur</li>
+                                <li>Dug Well Owned by Shri Deshmukh, Malegaon, District- Pune
+                                </li>
+                                <li>Godavari at U/S of Paithan at Paithan Intake Pump House at Jayakwadi</li>
+                                <li>Godavari at Jalna Intake Water Pump House, Shahabad</li>
+                                <li>Godavari at Latur Water Intake near Pump House at Dhamegaon</li>
+                                <li>Penganga D/S of Isapur Dam, Isapur, Pusad, Yavatmal</li>
+                            </div>
+                            <div>
+                                <li>Koyna at Karad</li>
+                                <li>Krishna D/S of Islampur</li>
+                                <li>Ulhas at Jambhul Water Works</li>
+                                <li>Panchaganga U/S of Kolhapur Town</li>
+                                <li>Savitri at Shedav Doh, Raigad</li>
+                                <li>Savitri River at Dadli Bridge</li>
+                                <li>MSW Site, Pathardi, Nasik</li>
+                                <li>Bhandewari, Nagpur</li>
+                                <li>Dahanu</li>
+                                <li>Godavari at Dhalegaon</li>
+                                <li>Krishna at Sangli</li>
+                                <li>Panchaganga at Ichalkaranji</li>
+                                <li>Khaperkheda, Nagpur</li>
+                                <li>Palghar</li>
+                                <li>Mira-Bhayander</li>
+                                <li>Indl. Estate Tarapur</li>
+                                <li>MSW Site, Taloja, Raigad</li>
+                                <li>Vasai</li>
+                                <li>TPS-Durgapur, Chandrapur</li>
+                                <li>Sukali, Amravati</li>
+                                <li>Akot, Akola</li>
+                                <li>Raipur, Nagpur</li>
+                                <li>Sawargaon, Yavatmal</li>
+                                <li>Bhahmni, Kalmeshwar, Nagpur</li>
+                                <li>Girna at Jalgaon</li>
+                                <li>Tapi at Ajnand Village</li>
+                                <li>Darna at Sansari, Nashik</li>
+                                <li>Rangavali D/S of Navapur</li>
+                                <li>Godavari at Nanded</li>
+                                <li>Godavari at Raher</li>
+                                <li>Ulhas at U/S of Badlapur</li>
+                                <li>Krishna at Rajapur Weir</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+
+
+
+            <!-- MEGHALAYA -->
+            <div id="data14" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl bg-bgpowerbi m-1 py-7">
+                                <h1 class="text-6xl font-black text-center font-custom text-amber-400">Meghalaya
+                                </h1>
+                            </div>
+                            <div class=""><img src="data/meghalaya/eut_meg.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">15</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">18.84</h1>
+                            </div>
+                            <div class=""><img src="data/meghalaya/ph_meg.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/meghalaya/wqi_meg.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/meghalaya/fec_meg.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+
+                     <!-- POLLUTION SOURCES -->
+                     <div>
+                        <h1 class="text-cyan-500 font-bold  text-2xl pb-2 text-center">Detected sources of Pollution
+                        </h1>
+                        <div class="flex flex-row justify-evenly text-sm text-white">
+                            <div>
+                                <li>Agricultural runoff</li>
+                            </div>
+                            <div>
+                                <li>Sewage and wastewater</li>
+                            </div>
+                            <div>
+                                <li>Mining activities</li>
+                            </div>
+                            <div>
+                                <li>Tourism-related pollution</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Mawlai, Shillong, Meghalaya</li>
+                            </div>
+                            <div>
+                                <li>Police Bazar, Shillong, Meghalaya</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Umiam Lake at Outfall of Umiam into Lake</li>
+                                <li>Umiam Lake at Barapani</li>
+                                <li>Umiam Lake at Middle Point</li>
+                                <li>Umiam Lake near Union Christian College</li>
+                                <li>Umiam Lake at Barapani</li>
+                            </div>
+                            <div>
+                                <li>Umiam Lake at Barapani</li>
+                                <li>Ward Lake at Shillong East</li>
+                                <li>Ward's Lake at Shillong</li>
+                                <li>Tasek Lake at Songsak (Naphak)</li>
+                            </div>
+                            <div>
+                                <li>Thadlaskein Lake, Jowai</li>
+                                <li>Thadlaskein Lake Shangpung, Meghalaya</li>
+                                <li>Industrial Estate, Byrnihat, Meghalaya</li>
+                                <li>Sohra Cherrapunjee, Meghalaya</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+            <!-- ORISSA -->
+            <div id="data15" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl bg-bgpowerbi m-1 py-6">
+                                <h1 class="text-7xl font-black text-center font-custom text-amber-400">Orissa
+                                </h1>
+                            </div>
+                            <div class=""><img src="data/orissa/eut_or.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">91</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">27.24</h1>
+                            </div>
+                            <div class=""><img src="data/orissa/ph_or.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/orissa/wqi_or.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/orissa/fec_or.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Daya at Bhubaneswar FD/S (2 km after confl. of Gangua Nallah W.River Daya)</li>
+                                <li>Bindusagar (Religious Pond of Bhubaneswar City)</li>
+                                <li>Indradyumna Tank (Religious Pond of Puri City)</li>
+                                <li>Swetaganga (Religious Pond of Puri City)</li>
+                                <li>Parvati Sagar (Religious Pond of Puri City)</li>
+                                <li>Narendra Pokhari (Religious Pond of Puri City)</li>
+                            </div>
+                            <div>
+                                <li>Indradyumna Tank (Religious Pond of Puri City)</li>
+                                <li>Markanda Pokhari (Religious Pond of Puri City)</li>
+                                <li>Parvati Sagar (Religious Pond of Puri City)</li>
+                                <li>Narendra Pokhari (Religious Pond of Puri City)</li>
+                                <li>Markanda Pokhari (Religious Pond of Puri City)</li>
+                                <li>Swetaganga (Religious Pond of Puri City)</li>
+                            </div>
+                            <div>
+                                <li>Kuakhai at Bhubaneswar D/S</li>
+                                <li>Brahmani at Rourkela D/S</li>
+                                <li>Tampada Lake at Chhatrapur</li>
+                                <li>Brahmani at D/S Panposh</li>
+                                <li>Jagannath Sagar Pond of Jeypore</li>
+                                <li>Raniguda Pond</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Bindusagar (Religious Pond of Bhubaneswar City) (Lingaraj Temple)</li>
+                                <li>Anshupa Lake at Sarandagarh</li>
+                                <li>Subarnarekha at Rajghat near Bihar Border</li>
+                                <li>Baitarni at Anandpur</li>
+                                <li>Katabandha (Before Impact of Indl Activity Kalinganagar Area)</li>
+                                <li>Cuttack FDS (Serua) at Sankhatrasa</li>
+                                <li>Brahmani at U/S Panposh</li>
+                                <li>Khanditara (D/S of Industrial Activities at Kalinga Nagar)</li>
+                                <li>Mahanadi at Tikarpada</li>
+                                <li>Paradeep U/S (Before Industrial Activity at Paradeep)</li>
+                                <li>Mahanadi at Hirakud Reservoir</li>
+                                <li>Chilka Lake at Rambha (Ramsar Site)</li>
+                                <li>Mundali (Water Intake Point of Bhubaneswar City)</li>
+                                <li>Mahanadi D/S (After Confl. with R. Ong Sonepur U/S)</li>
+                                <li>Madhupatna- Kalyan Nagar Area, Cuttack</li>
+                                <li>Brahmani at Bonaigarh</li>
+                                <li>Kusei Before Joining Baitarani at Anandpur</li>
+                                <li>Chilka Lake at Satapada (Ramsar Site)</li>
+                                <li>Brahmani at Talcher FU/S (Intake Well of MCL, Talcher)</li>
+                                <li>Khandagiri Area, Bhubaneswar, Orissa</li>
+                                <li>Old Town- Samantarai Pur Area, Bhubaneswar, Orissa</li>
+                                <li>Kalpna - Laxminagar Area, Bhubaneswar, Orissa</li>
+                                <li>Secretariat- Governor House- Old Bus Stand Area, Bhubaneswar, Orissa</li>
+                                <li>Hospital - Bus Stand- Maushima Temple Area, Puri, Orissa</li>
+
+                            </div>
+                            <div>
+                                <li>Near Jagannath Temple, Puri</li>
+                                <li>Near Sea Beach, Puri</li>
+                                <li>Badambari Area, Cuttack</li>
+                                <li>Jagatpur Industrial Area, Cuttack</li>
+                                <li>Bidanashi - Tulasipur Area, Cuttack</li>
+                                <li>Near River Kushabhadra, Puri</li>
+                                <li>IB at Brajrajnagar (Intake) D/S</li>
+                                <li>Mahanadi A/C R.Tel (Sonepur D/S)</li>
+                                <li>Anshupa Lake at Subaranapur</li>
+                                <li>Capital Hospital Area, Bhubaneswar</li>
+                                <li>Ranihat- Mangalabagh Area, Cuttack</li>
+                                <li>Mahanadi at Sambalpur U/S</li>
+                                <li>IB at Sundargarh, Orissa</li>
+                                <li>Brahmani at Talcher U/S</li>
+                                <li>Brahmani at Dharmashala</li>
+                                <li>Kuakhai at Bhubaneswar U/S</li>
+                                <li>Mahanadi at Paradeep D/S</li>
+                                <li>Rourkela FD/S at Biritala</li>
+                                <li>Sankha U/S (D/S of Mandira Dam)</li>
+                                <li>Brahmani at Pattamundai</li>
+                                <li>Baitarni at Jajpur</li>
+                                <li>Anshupa Lake at Kadalibari</li>
+                                <li>Brahmani at Kamalanga</li>
+                                <li>Dhenkanal D/S, Dhenkanal Town</li>
+                            </div>
+                            <div>
+                                <li>Brahmani at Samal</li>
+                                <li>Mahanadi at Cuttack U/S</li>
+                                <li>Kuakhai at Bhubaneswar FU/S</li>
+                                <li>Power Channel D/S Near Burla</li>
+                                <li>Bheden B/C with IB River</li>
+                                <li>Chilka Lake (Ramsar Site)</li>
+                                <li>Sambalpur FDS at Huma</li>
+                                <li>Baitarni at Dhamra</li>
+                                <li>Birupa at Choudwar</li>
+                                <li>Kathajodi at Cuttack D/S</li>
+                                <li>Mahanadi at Sambalpur D/S</li>
+                                <li>Mahanadi at Cuttack D/S</li>
+                                <li>Brahmani at Bhuban</li>
+                                <li>Brahmani at Talcher FD/S</li>
+                                <li>Brahmani at Rengali</li>
+                                <li>Mahanadi at Narsinghpur</li>
+                                <li>Baitarni at Joda</li>
+                                <li>Anshupa Lake at Bishnupur</li>
+                                <li>Koel U/S (A/C River Karo)</li>
+                                <li>IB at Jharsuguda (Intake)</li>
+                                <li>Tel River</li>
+                                <li>Anshupa</li>
+                                <li>Baitarni at Chandbali</li>
+                                <li>IB at Raj Nagar U/S</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+            <!-- PUNJAB -->
+            <div id="data16" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl bg-bgpowerbi m-1 py-6">
+                                <h1 class="text-7xl font-black text-center font-custom text-amber-400">Punjab
+                                </h1>
+                            </div>
+                            <div class=""><img src="data/punjab/eut_pb.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">26</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">19.10</h1>
+                            </div>
+                            <div class=""><img src="data/punjab/ph_pb.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/punjab/wqi_pb.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/punjab/fec_pb.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Satluj at 100m D/S Budha Nala Confluence, Ludhiana</li>
+                                <li>Satluj at Boat Bridge, Dharmkot-Nakodar Road, Jalandhar</li>
+                            </div>
+                            <div>
+                                <li>Satluj at 1 km D/S of Zenith</li>
+                                <li>Satluj at Bridge Harike, Amritsar</li>
+                            </div>
+                            <div>
+                                <li>Satluj at D/S East Basin</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Beas at 1 km D/S of Effluent Dish. Point at Mukerian</li>
+                                <li>Beas at 100m D/S of Industrial Discharge, Goindwal</li>
+                                <li>Beas at G.T. Road under Bridge near Kapurthala</li>
+                                <li>Ravi at U/S of Madhopur Headworks, Gurdaspur</li>
+                                <li>Satluj at 100m U/S of Headworks, Nangal</li>
+
+                            </div>
+                            <div>
+                                <li>Satluj at U/S Head Works Ropar</li>
+                                <li>Harike Lake D/S from Canal, Punjab</li>
+                                <li>Harike Lake at Harike Village, Punjab</li>
+                                <li>Ranjit Sagar Reservoir, Punjab</li>
+                                <li>Satluj at D/S Kiratpur Sahib</li>
+                            </div>
+                            <div>
+                                <li>U/S Goindwal</li>
+                                <li>U/S Pathankot</li>
+                                <li>Satluj at D/S NFL</li>
+                                <li>Beas at Talwara H/W</li>
+                                <li>Beas at Harike</li>
+                            </div>
+                            <div>
+                                <li>Satluj at 100m D/S, Nangal</li>
+                                <li>D/S Hussainiwala - H/W Ferozepur</li>
+                                <li>U/S Hussainiwala - H/W Ferozepur</li>
+                                <li>Beas at Mirthal Bridge, Gurdaspur</li>
+                                <li>U/S Budha Nallah (Upper)</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+
+
+            
+            <!-- RAJASTHAN -->
+            <div id="data17" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl bg-bgpowerbi m-1 py-6">
+                                <h1 class="text-7xl font-black text-center font-custom text-amber-400">Rajasthan
+                                </h1>
+                            </div>
+                            <div class=""><img src="data/rajasthan/eut_rj.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">119</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">26.41</h1>
+                            </div>
+                            <div class=""><img src="data/rajasthan/ph_rj.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/rajasthan/wqi_rj.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/rajasthan/fec_rj.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Lodha Talab, Banswara-Dungarpur Road, Banswara</li>
+                                <li>Rajsamand Lake, Rajsamand- Point No. 2, Rajsamand</li>
+                                <li>Fateh Sagar Lake at Udaipur Intake Point of PHED, </li>
+                                <li>Pichola Lake at Udaipur (Water Intake Point)</li>
+                            </div>
+                            <div>
+                                <li>Jal Mahal, Jaipur</li>
+                                <li>Gape-Sagar Lake, Dungarpur</li>
+                                <li>Goverdhan Sagar, Udaipur</li>
+                            </div>
+                            <div>
+                                <li>Swaroop Sagar Lake</li>
+                                <li>Jaisamand Lake, Alwar</li>
+                                <li>Jal Mahal, Jaipur</li>
+                            </div>
+                            <div>
+                                <li>Pushkar Lake, Rajasthan</li>
+                                <li>Nela Talab, Sector-14 Hiran Marg, Udaipur</li>
+                                <li>Udaisagar Lake at Udaipur (Intake Pt.)</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Well of Loomji, Chaudhary, Near Nayagaon, Pali (U/S 1 km from Pali Town)</li>
+                                <li>Well of Birma Ram Patel, Salawas, Jodhpur</li>
+                                <li>Well of Choutha Ram Pusa Pam, Left Side of Bridge Luni, Balotra</li>
+                                <li>Well of Babulal Ukkad Ji Mali, Sakarna Bera, Balotra, Jodhpur</li>
+                                <li>Pabupura Road Near Civil Air Port, Jodhpur (Mangilal Rathor)</li>
+                                <li>Well of Bhiksingh S/o Amar Singh Purohit, Balotra, Jodhpur</li>
+                                <li>Sh. Pol Singh Purohit, Village Punayata, Pali</li>
+                                <li>Well of Sh. Brija Ram, Khetri Nagar, Jhunjhunu</li>
+                                <li>Inside Shiv Temple Near Air Force Station Amer Road, Jaipur</li>
+                                <li>Near 9 No. Petrol Pump, Near Adarsh Nagar Gate, Ajmer</li>
+                                <li>Well at Village Alupur, Very Near Bhiwadi Industrial Area, Bhiwadi</li>
+                                <li>Well at Village Harchandpur, Bhiwadi to Bhiwadi Industrial Area</li>
+                                <li>Well of Girdhari Ram Meghwal, Village- Nandwan, Jodhpur</li>
+                                <li>Hand Pump Near Secondary School from Kansua Nallah Kota</li>
+                                <li>Near Rana Pratap Nagar, Railway Station, Udaipur</li>
+                                <li>Well at Village Santhla Very Near Bhiwadi Industrial Area, Bhiwadi</li>
+                                <li>Bore Well of M/S Modern Public School, Bhiwadi</li>
+                                <li>Well of Goojaron Ki Talai, Mohana Road Sanganer Jaipur</li>
+                                <li>PHED Well Near Railway Line Jhotawara, Jaipur</li>
+                                <li>Well of Sh. Mangal Chand Meena, Manpur Macheri, Jaipur</li>
+                                <li>Near ABN Central Academy, Susilpura, Sodala, Jaipur</li>
+                                <li>Village Vinayakia, Jodhpur (Badri Kumhar)</li>
+                                <li>Well at India Public School, Manpur Macheri, Jaipur</li>
+                                <li>Near Shree Kalyaneshwar Mahadev Temple, Jai Singh Pura Khurd, Jaipur</li>
+                                <li>Well of Sh Mool Chand Raiger, Manpur Macheri, Jaipur</li>
+                                <li>New Fatehpura, 200 ft. from Panchwati Nallah, Udaipur</li>
+                                <li>Well of RIICO at Leather Complex, Manpur Macheri, Jaipur</li>
+                                <li>Well at Village Bhiwadi, Bhiwadi to Bhiwadi Industrial Area, Bhiwadi</li>
+                                <li>M/S Specialty Silica Ltd., MIA Alwar Agro Food Park, Alwar</li>
+                                <li>Bore Well Sh. Umesh Kumar s/o Sh. Horidwari Ram 3A-16 UIT, Bhutija</li>
+                                <li>Public Hand Pump Before Sanganer Pulia</li>
+                                <li>Near Samshan Vishwakarma Nagar, Maharani Farm, Jaipur</li>
+                                <li>Near Foji Nagar, Kacchi Basti, Ambabari, Jaipur</li>
+                            </div>
+                            <div>
+                                <li>Lake Jet Sagar, Bundi</li>
+                                <li>Banas, Bisulpur Dam, Tonk</li>
+                                <li>Kayalana Jheel, Jodhpur</li>
+                                <li>Near Gandhi Bhawan, Ajmer</li>
+                                <li>Banas Near Newta Dam, Jaipur</li>
+                                <li>PHED Well Near NEI, Khatipura</li>
+                                <li>Jaisamand Lake, Alwar</li>
+                                <li>Lake Siliserh, Alwar</li>
+                                <li>Badi Ka Talab, Udaipur</li>
+                                <li>CWR of PHED, Bhituja</li>
+                                <li>Ujad U/S Bhim Sagar Dam</li>
+                                <li>Near UIT Bridge, Udaipur</li>
+                                <li>Chhapi, U/S Chhapi Dam</li>
+                                <li>Pushkar Lake</li>
+                                <li>Outside JLN Hospital, Ajmer</li>
+                                <li>Nakki Lake, Mt. Abu</li>
+                                <li>Rajsamand Lake</li>
+                                <li>Jet Sagar Lake, Bundi</li>
+                                <li>Chambal at Kota D/S</li>
+                                <li>Nakki Lake, Mt. Abu, Rajasthan</li>
+                                <li>Siliserh Lake, Alwar, Rajasthan</li>
+                                <li>Sujan Ganga, Bharatpur</li>
+                                <li>Gape-Sagar Lake, Dungarpur</li>
+                                <li>Jaisamand Lake, Salumber, Udaipur </li>
+                                <li>Jaisamand Lake, Salumber, Udaipur</li>
+                                <li>Kayalana Jheel, Jodhpur, Rajasthan</li>
+                                <li>RIICO Tube Well, Ria, Behror</li>
+                                <li>RIICO Tube Well, Ria, Neemrana</li>
+                                <li>RIICO Tube Well, Ria, Sotanala</li>
+                                <li>RIICO Tube Well, Ria, Shahjahanpur</li>
+                                <li>Near Khanpura Talab, Ajmer</li>
+                                <li>Well of Pema Ram Mali, Bhituja</li>
+                                <li>Kali Sindh at Barod Rd Bdg, Kota</li>
+                                <li>Bore Well M/S R.C. Palace Hotel, Bhiwadi</li>
+                            </div>
+                            <div>
+                                <li>Lake Jaisamand, Salumber, Udaipur, Pt No. 2</li>
+                                <li>Fateh Sagar Lake at Udaipur Intake Point of PHED</li>
+                                <li>Mahi (D/S) Conf with R. Chap (Under Sagwara-Sarhi Rd. Bdg.)</li>
+                                <li>Kali Sindh at Anicut of M/S CFCL Gadepan, Kota</li>
+                                <li>Lodha Talab, Banswara-Dungarpur Road, Banswara</li>
+                                <li>Village Agyaara, Tehsil- Ramgarh, Alwar</li>
+                                <li>Village Bager Meo, Tehsil- Ramgarh, Alwar</li>
+                                <li>Lake Jaisamand, Salumber, Udaipur, Pt No. 1</li>
+                                <li>Hotel Orient Place, Subhas Nagar, Udaipur</li>
+                                <li>Well at Village Gattal, Bhiwadi Industrial Area</li>
+                                <li>Parvati Before Meeting River Chambal at Khatoli, Kota</li>
+                                <li>Lake Rajsamand, Rajsamand- Point No. 1, Rajsamand</li>
+                                <li>Well of Ram Chandra Dewra, Village- Sangaria, Jodhpur</li>
+                                <li>Lake Rajsamand, Rajsamand- Point No. 2, Rajsamand</li>
+                                <li>Banas, Dhanari Dam, Near Swaroopganj, Sirohi</li>
+                                <li>Chambal Entering in Rajasthan at Gandhi Sagar Dam, Kota</li>
+                                <li>Chambal at Kota U/S (Intake Pt. Near Barrage)</li>
+                                <li>Chambal at Rameshwarghat Nr. Sawaimadhopur</li>
+                                <li>Well/Hand Pumps in the RIICO Industrial Area, Banswara</li>
+                                <li>Bore Well Sh. Brahm Jeet Service Station, Bhiwadi</li>
+                                <li>RIICO Pump House Near Monto Motors, MIA, Alwar</li>
+                                <li>Well Kothi in Village Bagar Rajput, Alwar</li>
+                                <li>Village Vinayakia, Jodhpur (Hiralal Kumhar)</li>
+                                <li>Bore Well in Modi Alkalies & Chemicals, MIA, Alwar</li>
+                                <li>Well (U/S 1 km from Jodhpur Town)</li>
+                                <li>Hand Pump Near Nevta Tiraha, Nevta Dam, Sanganer, Jaipur</li>
+                                <li>Well of Bhag Ji Laxman Ram Mali, Sakarna Bera, Jodhpur</li>
+                                <li>Well of Sh. Bhura Ram, Khetri Nagar, Jhunjhunu</li>
+                                <li>Tube Well of Girdhari Lal, Bhituja</li>
+                                <li>Hand Pump of Vidhani Village, Goner Road Jaipur</li>
+                                <li>Tube Well of M/S P. Parihar Industries, Jasol</li>
+                                <li>Village Vinayakia, Jodhpur (Hukum Singh Rathore)</li>
+                                <li>Well Infront of Singhana Police Station, Jhunjhunu</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+            <!-- TAMIL NADU -->
+            <div id="data18" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl bg-bgpowerbi m-1 py-8">
+                                <h1 class="text-6xl font-black text-center font-custom text-amber-400">Tamil Nadu</h1>
+                            </div>
+                            <div class=""><img src="data/tamilnadu /eut_tn.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">63</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">26.95</h1>
+                            </div>
+                            <div class=""><img src="data/tamilnadu /ph_tn.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/tamilnadu /wqi_tn.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/tamilnadu /fec_tn.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Thirumanimuthar at Salem, D/S of Sago & Textile Dyeing Industries</li>
+                                <li>Sarabanga at Salem, D/S of Textile Dyeing Industries Effluent</li>
+                            </div>
+                            <div>
+                                <li>Udhagamandalam Lake (Ooty)</li>
+                                <li>Yercaud Lake, Salem</li>
+                            </div>
+                            <div>
+                                <li>Vasista at Salem, D/S of Sago Industries Effluent</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                <li>Cauvery at Thirumukkudal - Confluence Pt. of R. Amravati</li>
+                                <li>Cauvery at 1km D/S of Bhavani River Confl</li>
+                                <li>Cauvery at Mayiladuthurai, Nagapattinam</li>
+                                <li>Cauvery at Pettaivaithalai, Trichy</li>
+                                <li>Tambiraparani at Sivalaperi, Confluence Point of Kuttralam Falls, Tirunelveli</li>
+                                <li>U/S of Kalingarayan Canal (B5), Erode</li>
+                                <li>Bhavani at D/S of Bhavanisagar, Sathiamangalam, Erode</li>
+                                <li>Tambiraparani at Vellakoil, Tirunelveli</li>
+                                <li>Bhavani at Pathirakaliamman Koil</li>
+                                <li>Amravati at 1km D/S from Eff. Disch. Pt. at Madhuthukkulam</li>
+                                <li>Tambiraparani at Arumuganer, Tamil Nadu</li>
+                                <li>Tambiraparani at Srivaikuntam, D/S of SK Anaicut, Tirunelveli</li>
+                                <li>Tambiraparani at Bdg. Nr. Madura Coats Ltd., Papavinasam</li>
+                                <li>Over Head Tank at Tirur Village, Thiruvallur Taluk, Thiruvallur Panchayat</li>
+                                <li>Cauvery at Pallippalayam</li>
+                                <li>Cauvery at Trichy, Grand Anaicut</li>
+                                <li>Udhagamandalam Lake (Ooty)</li>
+                                <li>Cauvery at Tiruchirappalli D/S</li>
+                            </div>
+                            <div>
+                                <li>Kodai Kanal Lake</li>
+                                <li>Poondi Lake at Thiruvallur</li>
+                                <li>Veeranam Lake at Cuddalore</li>
+                                <li>Pulicate Lake at Thiruvallur</li>
+                                <li>Porur Lake at Thiruvallur</li>
+                                <li>Tambiraparani at Pappankulam</li>
+                                <li>Tambiraparani at Murappanadu</li>
+                                <li>Cauvery at Pitchavaram</li>
+                                <li>Cauvery at Tiruchirappalli U/S</li>
+                                <li>Bhavani at Bhavani Sagar</li>
+                                <li>Veeranam Lake at Cuddalore</li>
+                                <li>Cauvery at Thanjavur</li>
+                                <li>Cauvery at Pugalur, Karur</li>
+                                <li>Cauvery at Musiri</li>
+                                <li>Cauvery at Coleroon</li>
+                                <li>Porur Lake at Thiruvallur</li>
+                                <li>Yercaud Lake, Salem</li>
+                                <li>Redd Hills at Thiruvallur</li>
+                            </div>
+                            <div>
+                                <li>Tambiraparani at Eral, Thoothukudi</li>
+                                <li>Tambiraparani at Cheranmadevi, Causeway</li>
+                                <li>Palar at Vaniyambadi Water Supply Head Work</li>
+                                <li>D/S of Kalingarayan Canal (B10), Erode</li>
+                                <li>Tambiraparani at Tirunelveli, Collectorate</li>
+                                <li>Cauvery at Mohanur near PattaiPalayam</li>
+                                <li>Cauvery at Vairapalayam, Namakal</li>
+                                <li>Cauvery at Komarapalayam, Namakal</li>
+                                <li>Palar at Vaniyambadi Water Supply Head Work</li>
+                                <li>Cauvery at Kumbakonam, Thanjavur</li>
+                                <li>Cauvery at Erode near Chirapalayam</li>
+                                <li>Cauvery at Velore near Kattipalayam</li>
+                                <li>Bhavani at Bhavani</li>
+                                <li>Bhavani at Sirumugai</li>
+                                <li>Cauvery at Mettur</li>
+                                <li>Cauvery at Urrachikottai, Erode</li>
+                                <li>Tambiraparani at Kallidai Kurichi, Tirunelveli</li>
+                                <li>Tambiraparani at Rail Bdg. Nr. Ambasamudram</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+            <!-- TELANGANA -->
+            <div id="data19" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl bg-bgpowerbi m-1 py-8">
+                                <h1 class="text-6xl font-black text-center font-custom text-amber-400">Telangana
+                                </h1>
+                            </div>
+                            <div class=""><img src="data/telangana/eut_tl.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">151</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">26.34</h1>
+                            </div>
+                            <div class=""><img src="data/telangana/ph_tl.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/telangana/wqi_tl.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/telangana/fec_tl.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                COMING SOON...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                COMING SOON...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+            <!-- TRIPURA -->
+            <div id="data20" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl bg-bgpowerbi m-1 py-8">
+                                <h1 class="text-6xl font-black text-center font-custom text-amber-400">Tripura
+                                </h1>
+                            </div>
+                            <div class=""><img src="data/tripura/eut_tr.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">20</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">25.51</h1>
+                            </div>
+                            <div class=""><img src="data/tripura/ph_tr.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/tripura/wqi_tr.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/tripura/fec_tr.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                COMING SOON...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                COMING SOON...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+            <!-- UTTARAKHAND -->
+            <div id="data21" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl bg-bgpowerbi m-1 py-8">
+                                <h1 class="text-6xl font-black text-center font-custom text-amber-400">Uttarakhand
+                                </h1>
+                            </div>
+                            <div class=""><img src="data/uttarakhand/eut_uk.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">12</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">18.64</h1>
+                            </div>
+                            <div class=""><img src="data/uttarakhand/ph_uk.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/uttarakhand/wqi_uk.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/uttarakhand/fec_uk.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                COMING SOON...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                COMING SOON...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+            <!-- UTTAR PRADESH -->
+            <div id="data22" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl bg-bgpowerbi m-1 py-9">
+                                <h1 class="text-5xl font-black text-center font-custom text-amber-400">Uttar Pradesh
+                                </h1>
+                            </div>
+                            <div class=""><img src="data/uttarpradesh/eut_up.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">47</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">24.19</h1>
+                            </div>
+                            <div class=""><img src="data/uttarpradesh/ph_up.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/uttarpradesh/wqi_up.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/uttarpradesh/fec_up.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                COMING SOON...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                COMING SOON...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+            <!-- WEST BENGAL -->
+            <div id="data23" class="content active">
+                <!-- DASHBOARD -->
+                <div class="flex flex-row gap-4 m-2">
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl bg-bgpowerbi m-1 py-8">
+                                <h1 class="text-6xl font-black text-center font-custom text-amber-400">West Bengal
+                                </h1>
+                            </div>
+                            <div class=""><img src="data/west bengal/eut_wb.png" alt="" class="h-96 w-auto"></div>
+                        </div>
+                    </div>
+                    <div class="basis-3/11">
+                        <div class="flex flex-col gap-5">
+                            <div class="border border-white rounded-xl p-4 text-center font-custom bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Location Count:</h1>
+                                <h1 class="text-white text-5xl font-bold">72</h1>
+                            </div>
+                            <div class="border border-white rounded-xl p-4 text-center bg-bg2powerbi m-1">
+                                <h1 class="text-white text-xl font-bold">Average Temperature:</h1>
+                                <h1 class="text-white text-5xl font-bold">25.91</h1>
+                            </div>
+                            <div class=""><img src="data/west bengal/ph_wb.png" alt="" class="h-auto w-72"></div>
+                        </div>
+                    </div>
+                    <div class="basis-4/11">
+                        <div class="flex flex-col gap-5">
+                            <div class=""><img src="data/west bengal/wqi_wb.png" alt="" class="h-64 w-96"></div>
+                            <div class=""><img src="data/west bengal/fec_wb.png" alt="" class="h-64 w-96"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+
+                <!-- LOCATION LIST -->
+                <div class="m-5 p-5 border border-white rounded-xl flex flex-col gap-8">
+                    <div class="text-white text-xs ">
+                        <h1 class="text-orange-600 font-bold  text-2xl pb-2 text-center">Polluted water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                COMING SOON...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs ">
+                        <h1 class="text-green-600 font-bold  text-2xl pb-2 text-center">Safe water bodies</h1>
+                        <div class="flex flex-row justify-evenly">
+                            <div>
+                                COMING SOON...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LINE -->
+                <div class="w-full h-0.5 bg-white my-8"></div>
+            </div>
+
+        </main>
+    </div>
+
+
+    <!-- FOOTER -->
+
+
+    <script>
+        const dataBtns = document.querySelectorAll('.data-btn');
+        const contents = document.querySelectorAll('.content');
+
+        dataBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                contents.forEach(content => content.classList.remove('active'));
+                const targetId = btn.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

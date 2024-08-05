@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE OP - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css">
+    <link rel="icon" href="IMGS/codeoptabicon.png">
+    <style>
+        body {
+            background-image: radial-gradient(circle, rgb(4, 63, 93), #030712);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .custom-background {
+            background-image: url('IMGS/water6.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 500px;
+            width: 100%;
+        }
+
+        .nav-transparent {
+            background: transparent;
+        }
+
+        .nav-opaque {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden custom-background">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="fixed top-0 w-full p-1 transition-all duration-300 z-50 nav-transparent">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="./index.html" class="">
+                <div class="text-white font-black text-2xl flex flex-row items-center">
+                    <img src="IMGS/codeoplogo.png" class="w-32 h-12 md:w-42 md:h-16 mr-2 md:mr-4 rounded-lg" alt="CodeOP Logo">
+                </div>
+            </a>
+
+            <div class="space-x-4 md:space-x-8 hidden md:flex">
+                <a href="./index.html"
+                    class="text-white font-bold text-lg md:text-xl border border-white rounded-full py-1 px-2 md:px-3 hover:text-cyan-500 hover:border-cyan-500">Home</a>
+                <a href="./report.html"
+                    class="text-white font-bold text-lg md:text-xl border border-white rounded-full py-1 px-2 md:px-3 hover:text-cyan-500 hover:border-cyan-500">Analysis
+                    Report</a>
+                <a href="#"
+                    class="text-white font-bold text-lg md:text-xl border border-white rounded-full py-1 px-2 md:px-3 hover:text-cyan-500 hover:border-cyan-500">About
+                    Us</a>
+            </div>
+            <div class="md:hidden text-white">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-black bg-opacity-75 text-white">
+        <div class="flex flex-col space-y-4 p-4">
+            <a href="#" class="block">Home</a>
+            <a href="#" class="block">Analysis Report</a>
+            <a href="#" class="block">About Us</a>
+        </div>
+    </div>
+
+    <!-- Landing Section -->
+    <section class="h-screen w-full bg-cover bg-center bg-no-repeat bg-fixed"
+        style="background-image: url('IMGS/water1.jpg');">
+        <div
+            class="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-white text-center px-4">
+            <div class="heading__text p-4">
+                <h1 class="text-2xl md:text-4xl lg:text-6xl font-bold mb-4 tracking-widest">INDIA'S WATER QUALITY
+                    INSIGHTS:
+                </h1>
+                <h1 class="text-xl md:text-3xl lg:text-5xl font-bold mb-4 tracking-widest">A Data-Driven State-Wise
+                    Analysis </h1>
+                <p
+                    class="text-sm md:text-lg lg:text-xl px-4 md:px-24 lg:px-48 mt-6 md:mt-10 font-custom text-center text-balance transition ease-in-out delay-100 hover:tranlate-y-2 hover:scale-110 duration-300">
+                    This project offers a comprehensive
+                    analysis of India's water quality using Central Pollution Control Board and Central Water Commission
+                    datasets, visualized with Power BI. It provides state-wise insights into parameters like
+                    eutrophication, pH, and fecal coliform levels, along with lists of polluted and safe water bodies,
+                    enabling better water management and public health strategies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="bg-cover bg-center bg-no-repeat h-full">
+        <div class="space-y-10 text-white p-4 md:p-10 lg:p-20">
+            <div
+                class="bg-slate-600 w-full md:w-3/4 lg:w-2/3 bg-opacity-20 backdrop-blur-md p-4 md:p-6 rounded-xl shadow-lg mx-auto md:ms-10 transition ease-in-out delay-100 hover:tranlate-y-2 hover:scale-110 duration-300">
+                <h2 class="text-2xl md:text-3xl font-bold pb-2 underline">UN SDG-6: Clean Water and Sanitation</h2>
+                <p class="text-base md:text-lg font-medium text-justify font-custom">Our project aligns with the UN SDG 6 (Clean
+                    Water and Sanitation) by providing an in-depth analysis of India's water quality. Using CPCB and
+                    CWC datasets and Power BI visualizations, we offer state-wise insights on key water quality
+                    parameters, including eutrophication, pH levels, and fecal coliform, to support sustainable
+                    water management and public health.</p>
+            </div>
+            <div
+                class="w-full md:w-3/4 lg:w-2/3 bg-slate-600 bg-opacity-20 backdrop-blur-md p-4 md:p-6 rounded-lg shadow-lg mx-auto md:ms-auto transition ease-in-out delay-100 hover:tranlate-y-2 hover:scale-110 duration-300">
+                <h2 class="text-2xl md:text-3xl font-bold pb-2 mb-2 underline">Problem Statement</h2>
+                <p class="text-base md:text-lg font-medium text-justify font-custom">Ensuring access to clean water and
+                    sanitation is a global challenge, particularly in diverse and densely populated countries like
+                    India. Inadequate water quality management can lead to significant health and environmental
+                    issues. This project addresses this by delivering a centralized platform with detailed
+                    state-wise water quality analysis, utilizing CPCB and CWC data to enhance transparency, support
+                    effective decision-making, and contribute to achieving the UN SDG 6 goals.</p>
+            </div>
+            <div
+                class="bg-slate-600 w-full md:w-3/4 lg:w-2/3 bg-opacity-20 backdrop-blur-md p-4 md:p-6 rounded-xl shadow-lg mx-auto md:ms-10 transition ease-in-out delay-100 hover:tranlate-y-2 hover:scale-110 duration-300">
+                <h2 class="text-2xl md:text-3xl font-bold pb-2 underline">Project Summary</h2>
+                <p class="text-base md:text-lg font-medium text-justify font-custom">Welcome to our interactive platform
+                    dedicated to analyzing and visualizing India's water quality across various states. Leveraging
+                    datasets from the Central Pollution Control Board (CPCB) and the Central Water Commission (CWC),
+                    and utilizing Power BI for advanced analysis and visualization, our site provides detailed
+                    insights into crucial water quality parameters. Explore interactive graphs and charts covering
+                    eutrophication levels, pH balance, and fecal coliform concentrations. Our state-wise water
+                    quality index and lists of polluted and safe water bodies will help you make informed decisions
+                    about water management and safety.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-cover bg-center bg-no-repeat h-full bg-fixed" style="background-image: url('IMGS/waterpollution1.jpg');">
+        <div class="text-white p-4 md:p-10 lg:p-20 flex flex-col space-y-10 md:space-y-36">
+            <div
+                class="w-full md:w-3/5 lg:w-2/5 bg-slate-600 bg-opacity-20 backdrop-blur-md p-4 md:p-6 rounded-lg shadow-lg transition ease-in-out delay-100 hover:tranlate-y-2 hover:scale-110 duration-300">
+                <h2 class="text-2xl md:text-3xl font-bold pb-2 mb-2 underline">Project Outcomes</h2>
+                <ul class="text-sm md:text-base font-medium text-justify font-custom list-disc pl-4">
+                    <li>Comprehensive Data Visualization: Interactive Power BI dashboards presenting key water
+                        quality parameters such as eutrophication levels, pH balance, and fecal coliform
+                        concentrations.</li>
+                    <li>State-Wise Analysis: Detailed water quality indices for each state, highlighting regions
+                        with critical water quality issues.</li>
+                    <li>Polluted vs. Safe Water Bodies: Lists identifying polluted and safe water bodies in each
+                        state, aiding in targeted intervention and resource allocation.</li>
+                    <li>Enhanced Decision-Making: Accessible, actionable data that supports effective water
+                        management strategies and public health initiatives.</li>
+                </ul>
+            </div>
+            <a href="./report.html"
+                class="w-full md:w-4/5 lg:w-3/5 mx-auto bg-slate-600 bg-opacity-20 backdrop-blur-md p-3 md:p-4 shadow-lg border-2 border-white rounded-full justify-center hover:-translate-y-5 duration-300 delay-150 text-white text-xl md:text-2xl lg:text-3xl font-custom font-bold text-center">State-wise
+                analysis of water bodies</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black p-4 md:p-8">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="flex flex-row gap-4 items-center p-1 md:ms-10">
+                <img src="IMGS/codeoplogo.png" class="h-10 w-24 md:h-24 md:w-48 rounded-xl" alt="CodeOP Logo">
+            </div>
+            <div class="flex flex-col md:flex-row justify-evenly items-center mt-4 md:mt-0">
+                <a href="" class="text-white m-2 font-bold text-lg md:text-2xl hover:text-cyan-500">Home</a>
+                <a href="" class="text-white m-2 font-bold text-lg md:text-2xl hover:text-cyan-500">About Us</a>
+                <div class="text-white text-center mt-4 md:mt-0 md:ms-10">
+                    <h1 class="text-xl font-bold">Contact</h1>
+                    <h2>@code.op777@gmail.com</h2>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 md:mt-8">
+            <h1 class="text-sm md:text-lg text-white text-center">&copy; 2024 CodeOP All rights reserved</h1>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Change navbar opacity on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.remove('nav-transparent');
+                navbar.classList.add('nav-opaque');
+            } else {
+                navbar.classList.remove('nav-opaque');
+                navbar.classList.add('nav-transparent');
+            }
+        });
+
+        const sr = ScrollReveal({
+            origin: 'bottom',
+            distance: '60px',
+            duration: 4000,
+            delay: 600,
+        });
+
+        sr.reveal('.heading__text', { origin: 'top' });
+    </script>
+
+    <script src="js/script.js"></script>
+    <script src="js/scrollreveal.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+</body>
+
+</html>
